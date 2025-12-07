@@ -1,0 +1,34 @@
+class FSMC3Protocol:
+	COMMAND_OPEN_POSITION: int	=	0
+	COMMAND_OPEN: chr			=	"["
+	COMMAND_CLOSE: chr			=	"]"
+	COMMAND_BYTE_POSITION: int	=	1
+	AXIS_DATA_START: int		=	2
+	AXIS_DATA_OFFSET: int		=	2
+	MAXIMUM_AXIS_COUNT: int		=	3
+	RETURN_MSG_CR: int			=	2
+	MAXIMUM_LENGTH_BYTES: int	=	1+1+(MAXIMUM_AXIS_COUNT*AXIS_DATA_OFFSET)+1+RETURN_MSG_CR
+	COMMAND_CLOSE_POSITION: int	=	MAXIMUM_LENGTH_BYTES - RETURN_MSG_CR -1 
+	
+	commands = {
+		"COMMAND_NONE"			:	"~",
+		"COMMAND_ENABLE"		:	"N",
+		"COMMAND_MOVE"			:	"M",
+		"COMMAND_REPORT"		:	"R",
+		"COMMAND_NUDGE_CENTER"	:	"C",
+		"COMMAND_SET_P"			:	"P",
+		"COMMAND_SET_I"			:	"I",
+		"COMMAND_SET_D"			:	"D",
+		"COMMAND_EEPROM_SAVE"	:	"X",
+		"COMMAND_EEPROM_LOAD"	:	"Y",
+		"COMMAND_EEPROM_WIPE"	:	"Z"
+	}
+
+	responses = {
+		"OUTPUT_SPI_POSITION"	:	"R",
+		"OUTPUT_ABZ_POSITION"	:	"E",
+		"OUTPUT_TARGET"			:	"T",
+		"OUTPUT_GET_P"			:	"P",
+		"OUTPUT_GET_I"			:	"I",
+		"OUTPUT_GET_D"			:	"D"
+	}

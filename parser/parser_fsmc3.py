@@ -2,13 +2,14 @@ from PySide6.QtCore import Signal, QObject
 from protocol.proto_fsmc3 import FSMC3Protocol
 from fsmc_settings import FSMC3Settings
 from utils.ascii_arduino import ard_ascii
-from utils.MapRange import MapRange
+from utils.Utils import Utils
 
 class FSMC3Parser(QObject):
 	axisSPIOut = Signal(tuple)
 	axisABZOut = Signal(tuple)
 	axisTargetOut = Signal(tuple)
 	axisPIDOut = Signal(tuple)
+	axisEnOut = Signal(tuple)
 
 	def __init__(self):
 		super().__init__()
@@ -16,26 +17,30 @@ class FSMC3Parser(QObject):
 		self.command = None
 
 	def getCmd(self, cmdType, data = None):
-		self.command = None
-		cmdOut: chr = []
-		if data == None:
-			data = [0,0,0]
-			if cmdType == None:
-				return
-		cmdOut.append(ard_ascii("["))
-		cmdOut.append(ard_ascii(FSMC3Protocol.commands.get(cmdType)))
-		byte_msb, byte_lsb = data[0].to_bytes(2, byteorder='big', signed=True)
-		cmdOut.append(byte_msb)
-		cmdOut.append(byte_lsb)
-		byte_msb, byte_lsb = data[1].to_bytes(2, byteorder='big', signed=True)
-		cmdOut.append(byte_msb)
-		cmdOut.append(byte_lsb)
-		byte_msb, byte_lsb = data[2].to_bytes(2, byteorder='big', signed=True)
-		cmdOut.append(byte_msb)
-		cmdOut.append(byte_lsb)
-		cmdOut.append(ard_ascii("]"))
-		self.command = bytearray(cmdOut)
-		return self.command
+		try:
+			self.command = None
+			cmdOut: chr = []
+			if data == None:
+				data = [0,0,0]
+				if cmdType == None:
+					return
+			cmdOut.append(ard_ascii("["))
+			cmdOut.append(ard_ascii(FSMC3Protocol.commands.get(cmdType)))
+			byte_msb, byte_lsb = data[0].to_bytes(2, byteorder='big', signed=True)
+			cmdOut.append(byte_msb)
+			cmdOut.append(byte_lsb)
+			byte_msb, byte_lsb = data[1].to_bytes(2, byteorder='big', signed=True)
+			cmdOut.append(byte_msb)
+			cmdOut.append(byte_lsb)
+			byte_msb, byte_lsb = data[2].to_bytes(2, byteorder='big', signed=True)
+			cmdOut.append(byte_msb)
+			cmdOut.append(byte_lsb)
+			cmdOut.append(ard_ascii("]"))
+			self.command = bytearray(cmdOut)
+			return self.command
+		except Exception as err:
+			print("getCmd: " + str(err))
+			return
 
 	def sorter(self, data : bytes):
 		try:
@@ -54,6 +59,8 @@ class FSMC3Parser(QObject):
 			self.parseTuneI(data)
 		elif type is FSMC3Protocol.responses.get("OUTPUT_GET_D"):
 			self.parseTuneD(data)
+		elif type is FSMC3Protocol.responses.get("OUTPUT_GET_EN"):
+			self.parseEnables(data)
 
 	def parseCmd(self, buffer_in: bytes):
 		try:
@@ -102,7 +109,7 @@ class FSMC3Parser(QObject):
 		try:
 			rawVals = self.parseCmd(data)
 			mappedVals = [
-				MapRange.mapRange(
+				Utils.mapRange(
 					value,
 					FSMC3Settings.INT16_LO,
 					FSMC3Settings.INT16_HI,
@@ -123,7 +130,7 @@ class FSMC3Parser(QObject):
 		try:
 			rawVals = self.parseCmd(data)
 			mappedVals = [
-				MapRange.mapRange(
+				Utils.mapRange(
 					value,
 					FSMC3Settings.INT16_LO,
 					FSMC3Settings.INT16_HI,
@@ -144,7 +151,7 @@ class FSMC3Parser(QObject):
 		try:
 			rawVals = self.parseCmd(data)
 			mappedVals = [
-				MapRange.mapRange(
+				Utils.mapRange(
 					value,
 					FSMC3Settings.INT16_LO,
 					FSMC3Settings.INT16_HI,
@@ -160,3 +167,14 @@ class FSMC3Parser(QObject):
 			self.axisPIDOut.emit(payload)
 		except Exception as err:
 			print("parseTuneD: " + str(err))
+	
+	def parseEnables(self, data):
+		try:
+			value = self.parseCmd(data)
+			self.axisEnOut.emit(
+					(int(value[0]),
+					int(value[1]),
+					int(value[2]))
+					)
+		except Exception as err:
+			print("parseEnables: " + str(err))

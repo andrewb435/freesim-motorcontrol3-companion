@@ -11,7 +11,7 @@ from utils.ascii_arduino import ard_ascii
 
 class SerialDriver:
 	def __init__(self):
-		self.updateMs: int = 16	# 16ms = 62.5Hz updates
+		self.updateMs: int = 10	# 10ms = 100Hz updates
 		self.port = None
 		self.baud = 115200
 		self.timer = TickTimer(self.updateMs)

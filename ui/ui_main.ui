@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="qBody">
-   <layout class="QVBoxLayout" name="verticalLayout_9">
+   <layout class="QVBoxLayout" name="verticalLayout_12">
     <item>
      <widget class="QFrame" name="frmSystem">
       <property name="sizePolicy">
@@ -23,23 +23,11 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::Shape::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Shadow::Raised</enum>
-      </property>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
         <widget class="QFrame" name="frmSystemEEPROM">
          <property name="enabled">
           <bool>false</bool>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::Shape::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Shadow::Raised</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
@@ -74,12 +62,6 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="frameShape">
-          <enum>QFrame::Shape::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Shadow::Raised</enum>
-         </property>
          <layout class="QVBoxLayout" name="verticalLayout">
           <property name="spacing">
            <number>10</number>
@@ -95,12 +77,6 @@
           </property>
           <item>
            <widget class="QFrame" name="frmSystemCOMList">
-            <property name="frameShape">
-             <enum>QFrame::Shape::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Shadow::Raised</enum>
-            </property>
             <layout class="QHBoxLayout" name="horizontalLayout">
              <item>
               <widget class="QPushButton" name="btnSerialConnect">
@@ -144,12 +120,6 @@
           </item>
           <item>
            <widget class="QFrame" name="frame">
-            <property name="frameShape">
-             <enum>QFrame::Shape::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Shadow::Raised</enum>
-            </property>
             <layout class="QHBoxLayout" name="horizontalLayout_2">
              <property name="spacing">
               <number>0</number>
@@ -224,64 +194,28 @@
     </item>
     <item>
      <widget class="QFrame" name="frmAxisControls">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::Shape::StyledPanel</enum>
-      </property>
       <property name="frameShadow">
        <enum>QFrame::Shadow::Raised</enum>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_10">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="topMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
-       </property>
        <item>
-        <widget class="QFrame" name="frmAxis_A">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>250</height>
-          </size>
-         </property>
+        <widget class="QFrame" name="frmAxisEnable_A">
          <property name="frameShape">
-          <enum>QFrame::Shape::StyledPanel</enum>
+          <enum>QFrame::Shape::NoFrame</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Shadow::Raised</enum>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <layout class="QVBoxLayout" name="verticalLayout_9">
           <property name="spacing">
            <number>0</number>
           </property>
@@ -298,247 +232,255 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QFrame" name="frmAxisSliders_A">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
+           <widget class="QPushButton" name="btnEnable_A">
+            <property name="text">
+             <string>Enable Axis</string>
             </property>
-            <property name="minimumSize">
-             <size>
-              <width>165</width>
-              <height>220</height>
-             </size>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Shape::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Shadow::Raised</enum>
-            </property>
-            <widget class="QLabel" name="labelTarget_A">
-             <property name="geometry">
-              <rect>
-               <x>90</x>
-               <y>165</y>
-               <width>60</width>
-               <height>25</height>
-              </rect>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Shape::Panel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Shadow::Raised</enum>
-             </property>
-             <property name="text">
-              <string>target</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
-            </widget>
-            <widget class="QTabWidget" name="tabAxisValues_A">
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>10</y>
-               <width>165</width>
-               <height>211</height>
-              </rect>
-             </property>
-             <property name="currentIndex">
-              <number>0</number>
-             </property>
-             <widget class="QWidget" name="spi_A">
-              <attribute name="title">
-               <string>SPI</string>
-              </attribute>
-              <widget class="QLabel" name="labelSPI_A">
-               <property name="geometry">
-                <rect>
-                 <x>10</x>
-                 <y>150</y>
-                 <width>60</width>
-                 <height>25</height>
-                </rect>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::Shape::Panel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Sunken</enum>
-               </property>
-               <property name="text">
-                <string>absolute</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
-              <widget class="QSlider" name="sliderSPI_A">
-               <property name="geometry">
-                <rect>
-                 <x>30</x>
-                 <y>8</y>
-                 <width>20</width>
-                 <height>140</height>
-                </rect>
-               </property>
-               <property name="orientation">
-                <enum>Qt::Orientation::Vertical</enum>
-               </property>
-              </widget>
-             </widget>
-             <widget class="QWidget" name="encoder_A">
-              <attribute name="title">
-               <string>Encoder</string>
-              </attribute>
-              <widget class="QSlider" name="sliderABZ_A">
-               <property name="geometry">
-                <rect>
-                 <x>30</x>
-                 <y>10</y>
-                 <width>20</width>
-                 <height>140</height>
-                </rect>
-               </property>
-               <property name="orientation">
-                <enum>Qt::Orientation::Vertical</enum>
-               </property>
-              </widget>
-              <widget class="QLabel" name="labelABZ_A">
-               <property name="geometry">
-                <rect>
-                 <x>10</x>
-                 <y>150</y>
-                 <width>60</width>
-                 <height>25</height>
-                </rect>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::Shape::Panel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Sunken</enum>
-               </property>
-               <property name="text">
-                <string>encoder</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
-             </widget>
-            </widget>
-            <widget class="QSlider" name="sliderTarget_A">
-             <property name="geometry">
-              <rect>
-               <x>110</x>
-               <y>50</y>
-               <width>20</width>
-               <height>110</height>
-              </rect>
-             </property>
-             <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
-             </property>
-            </widget>
-            <widget class="QLabel" name="labelTargetReported_A">
-             <property name="geometry">
-              <rect>
-               <x>90</x>
-               <y>192</y>
-               <width>60</width>
-               <height>25</height>
-              </rect>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Shape::Panel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Shadow::Sunken</enum>
-             </property>
-             <property name="text">
-              <string>report</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
-            </widget>
-            <zorder>tabAxisValues_A</zorder>
-            <zorder>sliderTarget_A</zorder>
-            <zorder>labelTarget_A</zorder>
-            <zorder>labelTargetReported_A</zorder>
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frmControls_A">
+           <widget class="QFrame" name="frmAxis_A">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="maximumSize">
              <size>
-              <width>250</width>
-              <height>16777215</height>
+              <width>16777215</width>
+              <height>250</height>
              </size>
             </property>
             <property name="frameShape">
-             <enum>QFrame::Shape::StyledPanel</enum>
+             <enum>QFrame::Shape::NoFrame</enum>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Shadow::Raised</enum>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_3">
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item>
-              <widget class="QFrame" name="frmCenter_A">
+              <widget class="QFrame" name="frmAxisSliders_A">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="minimumSize">
+                <size>
+                 <width>165</width>
+                 <height>220</height>
+                </size>
+               </property>
                <property name="frameShape">
-                <enum>QFrame::Shape::StyledPanel</enum>
+                <enum>QFrame::Shape::NoFrame</enum>
                </property>
                <property name="frameShadow">
                 <enum>QFrame::Shadow::Raised</enum>
                </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_3">
-                <item>
-                 <widget class="QFrame" name="crmCenterButtons_A">
+               <widget class="QLabel" name="labelTarget_A">
+                <property name="geometry">
+                 <rect>
+                  <x>90</x>
+                  <y>165</y>
+                  <width>60</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Shape::Panel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Shadow::Raised</enum>
+                </property>
+                <property name="text">
+                 <string>target</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+               <widget class="QTabWidget" name="tabAxisValues_A">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>10</y>
+                  <width>165</width>
+                  <height>211</height>
+                 </rect>
+                </property>
+                <property name="currentIndex">
+                 <number>0</number>
+                </property>
+                <widget class="QWidget" name="spi_A">
+                 <attribute name="title">
+                  <string>SPI</string>
+                 </attribute>
+                 <widget class="QLabel" name="labelSPI_A">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>150</y>
+                    <width>60</width>
+                    <height>25</height>
+                   </rect>
+                  </property>
                   <property name="frameShape">
-                   <enum>QFrame::Shape::StyledPanel</enum>
+                   <enum>QFrame::Shape::Panel</enum>
                   </property>
                   <property name="frameShadow">
-                   <enum>QFrame::Shadow::Raised</enum>
+                   <enum>QFrame::Shadow::Sunken</enum>
                   </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_2">
-                   <item>
-                    <widget class="QPushButton" name="btnNudgeUp_A">
-                     <property name="text">
-                      <string>^</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="btnNudgeDown_A">
-                     <property name="text">
-                      <string>v</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
+                  <property name="text">
+                   <string>absolute</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignCenter</set>
+                  </property>
                  </widget>
-                </item>
+                 <widget class="QSlider" name="sliderSPI_A">
+                  <property name="geometry">
+                   <rect>
+                    <x>30</x>
+                    <y>8</y>
+                    <width>20</width>
+                    <height>140</height>
+                   </rect>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                 </widget>
+                </widget>
+                <widget class="QWidget" name="encoder_A">
+                 <attribute name="title">
+                  <string>Encoder</string>
+                 </attribute>
+                 <widget class="QSlider" name="sliderABZ_A">
+                  <property name="geometry">
+                   <rect>
+                    <x>30</x>
+                    <y>10</y>
+                    <width>20</width>
+                    <height>140</height>
+                   </rect>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="labelABZ_A">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>150</y>
+                    <width>60</width>
+                    <height>25</height>
+                   </rect>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::Shape::Panel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Shadow::Sunken</enum>
+                  </property>
+                  <property name="text">
+                   <string>encoder</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignCenter</set>
+                  </property>
+                 </widget>
+                </widget>
+               </widget>
+               <widget class="QSlider" name="sliderTarget_A">
+                <property name="geometry">
+                 <rect>
+                  <x>110</x>
+                  <y>50</y>
+                  <width>20</width>
+                  <height>110</height>
+                 </rect>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Orientation::Vertical</enum>
+                </property>
+               </widget>
+               <widget class="QLabel" name="labelTargetReported_A">
+                <property name="geometry">
+                 <rect>
+                  <x>90</x>
+                  <y>192</y>
+                  <width>60</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Shape::Panel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Shadow::Sunken</enum>
+                </property>
+                <property name="text">
+                 <string>report</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+               <zorder>tabAxisValues_A</zorder>
+               <zorder>sliderTarget_A</zorder>
+               <zorder>labelTarget_A</zorder>
+               <zorder>labelTargetReported_A</zorder>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="frmControls_A">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>250</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Shape::NoFrame</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_3">
                 <item>
-                 <widget class="QLabel" name="lblNudgeCenter_A">
+                 <widget class="QFrame" name="frmCenter_A">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -547,128 +489,65 @@
                    <enum>QFrame::Shape::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
-                   <enum>QFrame::Shadow::Plain</enum>
+                   <enum>QFrame::Shadow::Raised</enum>
                   </property>
-                  <property name="text">
-                   <string>Nudge Center</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-                  </property>
-                  <property name="wordWrap">
-                   <bool>true</bool>
-                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_3">
+                   <item>
+                    <widget class="QFrame" name="crmCenterButtons_A">
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Raised</enum>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_2">
+                      <item>
+                       <widget class="QPushButton" name="btnNudgeUp_A">
+                        <property name="text">
+                         <string>^</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="btnNudgeDown_A">
+                        <property name="text">
+                         <string>v</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="lblNudgeCenter_A">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Plain</enum>
+                     </property>
+                     <property name="text">
+                      <string>Nudge Center</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                     </property>
+                     <property name="wordWrap">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="labelEnabled_A">
-               <property name="frameShape">
-                <enum>QFrame::Shape::NoFrame</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Plain</enum>
-               </property>
-               <property name="text">
-                <string>Axis: abled</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btnEnable_A">
-               <property name="text">
-                <string>Enable Axis</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QFrame" name="frmPID_A">
-               <property name="frameShape">
-                <enum>QFrame::Shape::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Raised</enum>
-               </property>
-               <layout class="QFormLayout" name="formLayout">
-                <item row="1" column="0">
-                 <widget class="QLabel" name="labelKp_A">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::Panel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Sunken</enum>
-                  </property>
-                  <property name="text">
-                   <string>0.000</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="0">
-                 <widget class="QLabel" name="labelKi_A">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::Panel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Sunken</enum>
-                  </property>
-                  <property name="text">
-                   <string>0.000</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="5" column="0">
-                 <widget class="QLabel" name="labelKd_A">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::Panel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Sunken</enum>
-                  </property>
-                  <property name="text">
-                   <string>0.000</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QLabel" name="lblPIDAP_A">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
+                <item>
+                 <widget class="QLabel" name="labelEnabled_A">
                   <property name="frameShape">
                    <enum>QFrame::Shape::NoFrame</enum>
                   </property>
@@ -676,55 +555,203 @@
                    <enum>QFrame::Shadow::Plain</enum>
                   </property>
                   <property name="text">
-                   <string>Tune: P</string>
+                   <string>Axis: abled</string>
                   </property>
                   <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                   <set>Qt::AlignmentFlag::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="1">
-                 <widget class="QLabel" name="lblPIDAI_A">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
+                <item>
+                 <widget class="QFrame" name="frmPID_A">
                   <property name="frameShape">
                    <enum>QFrame::Shape::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
-                   <enum>QFrame::Shadow::Plain</enum>
+                   <enum>QFrame::Shadow::Raised</enum>
                   </property>
-                  <property name="text">
-                   <string>Tune: I</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="5" column="1">
-                 <widget class="QLabel" name="lblPIDAD_A">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::NoFrame</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Plain</enum>
-                  </property>
-                  <property name="text">
-                   <string>Tune: D</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-                  </property>
+                  <layout class="QFormLayout" name="formLayout">
+                   <item row="1" column="1">
+                    <widget class="QLabel" name="lblPIDAP_A">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Plain</enum>
+                     </property>
+                     <property name="text">
+                      <string>Tune: P</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="1">
+                    <widget class="QLabel" name="lblPIDAI_A">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Plain</enum>
+                     </property>
+                     <property name="text">
+                      <string>Tune: I</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="5" column="1">
+                    <widget class="QLabel" name="lblPIDAD_A">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Plain</enum>
+                     </property>
+                     <property name="text">
+                      <string>Tune: D</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QFrame" name="frmKp_A">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::Panel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Raised</enum>
+                     </property>
+                     <widget class="QPushButton" name="btnKp_A">
+                      <property name="geometry">
+                       <rect>
+                        <x>0</x>
+                        <y>-1</y>
+                        <width>60</width>
+                        <height>20</height>
+                       </rect>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>60</width>
+                        <height>16</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string notr="true">0.000</string>
+                      </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </widget>
+                   </item>
+                   <item row="3" column="0">
+                    <widget class="QFrame" name="frmKi_A">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::Panel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Raised</enum>
+                     </property>
+                     <widget class="QPushButton" name="btnKi_A">
+                      <property name="geometry">
+                       <rect>
+                        <x>0</x>
+                        <y>-1</y>
+                        <width>60</width>
+                        <height>20</height>
+                       </rect>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>60</width>
+                        <height>16</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string notr="true">0.000</string>
+                      </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </widget>
+                   </item>
+                   <item row="5" column="0">
+                    <widget class="QFrame" name="frmKd_A">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::Panel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Raised</enum>
+                     </property>
+                     <widget class="QPushButton" name="btnKd_A">
+                      <property name="geometry">
+                       <rect>
+                        <x>0</x>
+                        <y>-1</y>
+                        <width>60</width>
+                        <height>20</height>
+                       </rect>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>60</width>
+                        <height>16</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string notr="true">0.000</string>
+                      </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                </layout>
@@ -737,35 +764,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QFrame" name="frmAxis_B">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>250</height>
-          </size>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::Shape::StyledPanel</enum>
-         </property>
+        <widget class="QFrame" name="frmAxisEnable_B">
          <property name="frameShadow">
           <enum>QFrame::Shadow::Raised</enum>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <layout class="QVBoxLayout" name="verticalLayout_10">
           <property name="spacing">
            <number>0</number>
           </property>
@@ -782,237 +785,299 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QFrame" name="frmAxisSliders_B">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
+           <widget class="QPushButton" name="btnEnable_B">
+            <property name="text">
+             <string>Enable Axis</string>
             </property>
-            <property name="minimumSize">
-             <size>
-              <width>165</width>
-              <height>220</height>
-             </size>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Shape::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Shadow::Raised</enum>
-            </property>
-            <widget class="QLabel" name="labelTarget_B">
-             <property name="geometry">
-              <rect>
-               <x>90</x>
-               <y>165</y>
-               <width>60</width>
-               <height>25</height>
-              </rect>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Shape::Panel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Shadow::Raised</enum>
-             </property>
-             <property name="text">
-              <string>target</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
-            </widget>
-            <widget class="QTabWidget" name="tabAxisValues_B">
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>10</y>
-               <width>165</width>
-               <height>211</height>
-              </rect>
-             </property>
-             <property name="currentIndex">
-              <number>0</number>
-             </property>
-             <widget class="QWidget" name="spi_B">
-              <attribute name="title">
-               <string>SPI</string>
-              </attribute>
-              <widget class="QLabel" name="labelSPI_B">
-               <property name="geometry">
-                <rect>
-                 <x>10</x>
-                 <y>150</y>
-                 <width>60</width>
-                 <height>25</height>
-                </rect>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::Shape::Panel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Sunken</enum>
-               </property>
-               <property name="text">
-                <string>absolute</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
-              <widget class="QSlider" name="sliderSPI_B">
-               <property name="geometry">
-                <rect>
-                 <x>30</x>
-                 <y>8</y>
-                 <width>20</width>
-                 <height>140</height>
-                </rect>
-               </property>
-               <property name="orientation">
-                <enum>Qt::Orientation::Vertical</enum>
-               </property>
-              </widget>
-             </widget>
-             <widget class="QWidget" name="encoder_B">
-              <attribute name="title">
-               <string>Encoder</string>
-              </attribute>
-              <widget class="QSlider" name="sliderABZ_B">
-               <property name="geometry">
-                <rect>
-                 <x>30</x>
-                 <y>10</y>
-                 <width>20</width>
-                 <height>140</height>
-                </rect>
-               </property>
-               <property name="orientation">
-                <enum>Qt::Orientation::Vertical</enum>
-               </property>
-              </widget>
-              <widget class="QLabel" name="labelABZ_B">
-               <property name="geometry">
-                <rect>
-                 <x>10</x>
-                 <y>150</y>
-                 <width>60</width>
-                 <height>25</height>
-                </rect>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::Shape::Panel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Sunken</enum>
-               </property>
-               <property name="text">
-                <string>encoder</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
-             </widget>
-            </widget>
-            <widget class="QSlider" name="sliderTarget_B">
-             <property name="geometry">
-              <rect>
-               <x>110</x>
-               <y>50</y>
-               <width>20</width>
-               <height>110</height>
-              </rect>
-             </property>
-             <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
-             </property>
-            </widget>
-            <widget class="QLabel" name="labelTargetReported_B">
-             <property name="geometry">
-              <rect>
-               <x>90</x>
-               <y>192</y>
-               <width>60</width>
-               <height>25</height>
-              </rect>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Shape::Panel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Shadow::Sunken</enum>
-             </property>
-             <property name="text">
-              <string>report</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
-            </widget>
-            <zorder>tabAxisValues_B</zorder>
-            <zorder>sliderTarget_B</zorder>
-            <zorder>labelTarget_B</zorder>
-            <zorder>labelTargetReported_B</zorder>
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frmControls_B">
+           <widget class="QFrame" name="frmAxis_B">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="maximumSize">
+            <property name="minimumSize">
              <size>
-              <width>250</width>
-              <height>16777215</height>
+              <width>0</width>
+              <height>0</height>
              </size>
             </property>
-            <property name="frameShape">
-             <enum>QFrame::Shape::StyledPanel</enum>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>250</height>
+             </size>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Shadow::Raised</enum>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_5">
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item>
-              <widget class="QFrame" name="frmCenter_B">
+              <widget class="QFrame" name="frmAxisSliders_B">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
-               <property name="frameShape">
-                <enum>QFrame::Shape::StyledPanel</enum>
+               <property name="minimumSize">
+                <size>
+                 <width>165</width>
+                 <height>220</height>
+                </size>
                </property>
                <property name="frameShadow">
                 <enum>QFrame::Shadow::Raised</enum>
                </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_5">
-                <item>
-                 <widget class="QFrame" name="crmCenterButtons_B">
+               <widget class="QLabel" name="labelTarget_B">
+                <property name="geometry">
+                 <rect>
+                  <x>90</x>
+                  <y>165</y>
+                  <width>60</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Shape::Panel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Shadow::Raised</enum>
+                </property>
+                <property name="text">
+                 <string>target</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+               <widget class="QTabWidget" name="tabAxisValues_B">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>10</y>
+                  <width>165</width>
+                  <height>211</height>
+                 </rect>
+                </property>
+                <property name="currentIndex">
+                 <number>0</number>
+                </property>
+                <widget class="QWidget" name="spi_B">
+                 <attribute name="title">
+                  <string>SPI</string>
+                 </attribute>
+                 <widget class="QLabel" name="labelSPI_B">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>150</y>
+                    <width>60</width>
+                    <height>25</height>
+                   </rect>
+                  </property>
                   <property name="frameShape">
-                   <enum>QFrame::Shape::StyledPanel</enum>
+                   <enum>QFrame::Shape::Panel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Shadow::Sunken</enum>
+                  </property>
+                  <property name="text">
+                   <string>absolute</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignCenter</set>
+                  </property>
+                 </widget>
+                 <widget class="QSlider" name="sliderSPI_B">
+                  <property name="geometry">
+                   <rect>
+                    <x>30</x>
+                    <y>8</y>
+                    <width>20</width>
+                    <height>140</height>
+                   </rect>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                 </widget>
+                </widget>
+                <widget class="QWidget" name="encoder_B">
+                 <attribute name="title">
+                  <string>Encoder</string>
+                 </attribute>
+                 <widget class="QSlider" name="sliderABZ_B">
+                  <property name="geometry">
+                   <rect>
+                    <x>30</x>
+                    <y>10</y>
+                    <width>20</width>
+                    <height>140</height>
+                   </rect>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="labelABZ_B">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>150</y>
+                    <width>60</width>
+                    <height>25</height>
+                   </rect>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::Shape::Panel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Shadow::Sunken</enum>
+                  </property>
+                  <property name="text">
+                   <string>encoder</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignCenter</set>
+                  </property>
+                 </widget>
+                </widget>
+               </widget>
+               <widget class="QSlider" name="sliderTarget_B">
+                <property name="geometry">
+                 <rect>
+                  <x>110</x>
+                  <y>50</y>
+                  <width>20</width>
+                  <height>110</height>
+                 </rect>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Orientation::Vertical</enum>
+                </property>
+               </widget>
+               <widget class="QLabel" name="labelTargetReported_B">
+                <property name="geometry">
+                 <rect>
+                  <x>90</x>
+                  <y>192</y>
+                  <width>60</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Shape::Panel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Shadow::Sunken</enum>
+                </property>
+                <property name="text">
+                 <string>report</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+               <zorder>tabAxisValues_B</zorder>
+               <zorder>sliderTarget_B</zorder>
+               <zorder>labelTarget_B</zorder>
+               <zorder>labelTargetReported_B</zorder>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="frmControls_B">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>250</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_5">
+                <item>
+                 <widget class="QFrame" name="frmCenter_B">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Shadow::Raised</enum>
                   </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_6">
+                  <layout class="QHBoxLayout" name="horizontalLayout_5">
                    <item>
-                    <widget class="QPushButton" name="btnNudgeUp_B">
-                     <property name="text">
-                      <string>^</string>
+                    <widget class="QFrame" name="crmCenterButtons_B">
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Raised</enum>
                      </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_6">
+                      <item>
+                       <widget class="QPushButton" name="btnNudgeUp_B">
+                        <property name="text">
+                         <string>^</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="btnNudgeDown_B">
+                        <property name="text">
+                         <string>v</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="btnNudgeDown_B">
+                    <widget class="QLabel" name="lblNudgeCenter_B">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Plain</enum>
+                     </property>
                      <property name="text">
-                      <string>v</string>
+                      <string>Nudge Center</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                     </property>
+                     <property name="wordWrap">
+                      <bool>true</bool>
                      </property>
                     </widget>
                    </item>
@@ -1020,13 +1085,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="lblNudgeCenter_B">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
+                 <widget class="QLabel" name="labelEnabled_B">
                   <property name="frameShape">
                    <enum>QFrame::Shape::NoFrame</enum>
                   </property>
@@ -1034,181 +1093,200 @@
                    <enum>QFrame::Shadow::Plain</enum>
                   </property>
                   <property name="text">
-                   <string>Nudge Center</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-                  </property>
-                  <property name="wordWrap">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="labelEnabled_B">
-               <property name="frameShape">
-                <enum>QFrame::Shape::NoFrame</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Plain</enum>
-               </property>
-               <property name="text">
-                <string>Axis: abled</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btnEnable_B">
-               <property name="text">
-                <string>Enable Axis</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QFrame" name="frmPID_B">
-               <property name="frameShape">
-                <enum>QFrame::Shape::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Raised</enum>
-               </property>
-               <layout class="QFormLayout" name="formLayout_2">
-                <item row="1" column="0">
-                 <widget class="QLabel" name="labelKp_B">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::Panel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Sunken</enum>
-                  </property>
-                  <property name="text">
-                   <string>0.000</string>
+                   <string>Axis: abled</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignmentFlag::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="0">
-                 <widget class="QLabel" name="labelKi_B">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::Panel</enum>
-                  </property>
+                <item>
+                 <widget class="QFrame" name="frmPID_B">
                   <property name="frameShadow">
-                   <enum>QFrame::Shadow::Sunken</enum>
+                   <enum>QFrame::Shadow::Raised</enum>
                   </property>
-                  <property name="text">
-                   <string>0.000</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="5" column="0">
-                 <widget class="QLabel" name="labelKd_B">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::Panel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Sunken</enum>
-                  </property>
-                  <property name="text">
-                   <string>0.000</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QLabel" name="lblPIDAP_B">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::NoFrame</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Plain</enum>
-                  </property>
-                  <property name="text">
-                   <string>Tune: P</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="1">
-                 <widget class="QLabel" name="lblPIDAI_B">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::NoFrame</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Plain</enum>
-                  </property>
-                  <property name="text">
-                   <string>Tune: I</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="5" column="1">
-                 <widget class="QLabel" name="lblPIDAD_B">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::NoFrame</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Plain</enum>
-                  </property>
-                  <property name="text">
-                   <string>Tune: D</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-                  </property>
+                  <layout class="QFormLayout" name="formLayout_2">
+                   <item row="1" column="1">
+                    <widget class="QLabel" name="lblPIDAP_B">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Plain</enum>
+                     </property>
+                     <property name="text">
+                      <string>Tune: P</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="1">
+                    <widget class="QLabel" name="lblPIDAI_B">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Plain</enum>
+                     </property>
+                     <property name="text">
+                      <string>Tune: I</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="5" column="1">
+                    <widget class="QLabel" name="lblPIDAD_B">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Plain</enum>
+                     </property>
+                     <property name="text">
+                      <string>Tune: D</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QFrame" name="frmKp_B">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::Panel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Raised</enum>
+                     </property>
+                     <widget class="QPushButton" name="btnKp_B">
+                      <property name="geometry">
+                       <rect>
+                        <x>0</x>
+                        <y>-1</y>
+                        <width>60</width>
+                        <height>20</height>
+                       </rect>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>60</width>
+                        <height>16</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string notr="true">0.000</string>
+                      </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </widget>
+                   </item>
+                   <item row="3" column="0">
+                    <widget class="QFrame" name="frmKi_B">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::Panel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Raised</enum>
+                     </property>
+                     <widget class="QPushButton" name="btnKi_B">
+                      <property name="geometry">
+                       <rect>
+                        <x>0</x>
+                        <y>-1</y>
+                        <width>60</width>
+                        <height>20</height>
+                       </rect>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>60</width>
+                        <height>16</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string notr="true">0.000</string>
+                      </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </widget>
+                   </item>
+                   <item row="5" column="0">
+                    <widget class="QFrame" name="frmKd_B">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::Panel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Raised</enum>
+                     </property>
+                     <widget class="QPushButton" name="btnKd_B">
+                      <property name="geometry">
+                       <rect>
+                        <x>0</x>
+                        <y>-1</y>
+                        <width>60</width>
+                        <height>20</height>
+                       </rect>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>60</width>
+                        <height>16</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string notr="true">0.000</string>
+                      </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                </layout>
@@ -1221,35 +1299,14 @@
         </widget>
        </item>
        <item>
-        <widget class="QFrame" name="frmAxis_C">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>250</height>
-          </size>
-         </property>
+        <widget class="QFrame" name="frmAxisEnable_C">
          <property name="frameShape">
-          <enum>QFrame::Shape::StyledPanel</enum>
+          <enum>QFrame::Shape::NoFrame</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Shadow::Raised</enum>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <layout class="QVBoxLayout" name="verticalLayout_11">
           <property name="spacing">
            <number>0</number>
           </property>
@@ -1266,247 +1323,255 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QFrame" name="frmAxisSliders_C">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
+           <widget class="QPushButton" name="btnEnable_C">
+            <property name="text">
+             <string>Enable Axis</string>
             </property>
-            <property name="minimumSize">
-             <size>
-              <width>165</width>
-              <height>220</height>
-             </size>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Shape::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Shadow::Raised</enum>
-            </property>
-            <widget class="QLabel" name="labelTarget_C">
-             <property name="geometry">
-              <rect>
-               <x>90</x>
-               <y>165</y>
-               <width>60</width>
-               <height>25</height>
-              </rect>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Shape::Panel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Shadow::Raised</enum>
-             </property>
-             <property name="text">
-              <string>target</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
-            </widget>
-            <widget class="QTabWidget" name="tabAxisValues_C">
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>10</y>
-               <width>165</width>
-               <height>211</height>
-              </rect>
-             </property>
-             <property name="currentIndex">
-              <number>0</number>
-             </property>
-             <widget class="QWidget" name="spi_C">
-              <attribute name="title">
-               <string>SPI</string>
-              </attribute>
-              <widget class="QLabel" name="labelSPI_C">
-               <property name="geometry">
-                <rect>
-                 <x>10</x>
-                 <y>150</y>
-                 <width>60</width>
-                 <height>25</height>
-                </rect>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::Shape::Panel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Sunken</enum>
-               </property>
-               <property name="text">
-                <string>absolute</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
-              <widget class="QSlider" name="sliderSPI_C">
-               <property name="geometry">
-                <rect>
-                 <x>30</x>
-                 <y>8</y>
-                 <width>20</width>
-                 <height>140</height>
-                </rect>
-               </property>
-               <property name="orientation">
-                <enum>Qt::Orientation::Vertical</enum>
-               </property>
-              </widget>
-             </widget>
-             <widget class="QWidget" name="encoder_C">
-              <attribute name="title">
-               <string>Encoder</string>
-              </attribute>
-              <widget class="QSlider" name="sliderABZ_C">
-               <property name="geometry">
-                <rect>
-                 <x>30</x>
-                 <y>10</y>
-                 <width>20</width>
-                 <height>140</height>
-                </rect>
-               </property>
-               <property name="orientation">
-                <enum>Qt::Orientation::Vertical</enum>
-               </property>
-              </widget>
-              <widget class="QLabel" name="labelABZ_C">
-               <property name="geometry">
-                <rect>
-                 <x>10</x>
-                 <y>150</y>
-                 <width>60</width>
-                 <height>25</height>
-                </rect>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::Shape::Panel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Sunken</enum>
-               </property>
-               <property name="text">
-                <string>encoder</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
-             </widget>
-            </widget>
-            <widget class="QSlider" name="sliderTarget_C">
-             <property name="geometry">
-              <rect>
-               <x>110</x>
-               <y>50</y>
-               <width>20</width>
-               <height>110</height>
-              </rect>
-             </property>
-             <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
-             </property>
-            </widget>
-            <widget class="QLabel" name="labelTargetReported_C">
-             <property name="geometry">
-              <rect>
-               <x>90</x>
-               <y>192</y>
-               <width>60</width>
-               <height>25</height>
-              </rect>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Shape::Panel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Shadow::Sunken</enum>
-             </property>
-             <property name="text">
-              <string>report</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
-            </widget>
-            <zorder>tabAxisValues_C</zorder>
-            <zorder>sliderTarget_C</zorder>
-            <zorder>labelTargetReported_C</zorder>
-            <zorder>labelTarget_C</zorder>
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frmControls_C">
+           <widget class="QFrame" name="frmAxis_C">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="maximumSize">
              <size>
-              <width>250</width>
-              <height>16777215</height>
+              <width>16777215</width>
+              <height>250</height>
              </size>
             </property>
             <property name="frameShape">
-             <enum>QFrame::Shape::StyledPanel</enum>
+             <enum>QFrame::Shape::NoFrame</enum>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Shadow::Raised</enum>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_7">
+            <layout class="QHBoxLayout" name="horizontalLayout_9">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item>
-              <widget class="QFrame" name="frmCenter_C">
+              <widget class="QFrame" name="frmAxisSliders_C">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="minimumSize">
+                <size>
+                 <width>165</width>
+                 <height>220</height>
+                </size>
+               </property>
                <property name="frameShape">
-                <enum>QFrame::Shape::StyledPanel</enum>
+                <enum>QFrame::Shape::NoFrame</enum>
                </property>
                <property name="frameShadow">
                 <enum>QFrame::Shadow::Raised</enum>
                </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_6">
-                <item>
-                 <widget class="QFrame" name="crmCenterButtons_C">
+               <widget class="QLabel" name="labelTarget_C">
+                <property name="geometry">
+                 <rect>
+                  <x>90</x>
+                  <y>165</y>
+                  <width>60</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Shape::Panel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Shadow::Raised</enum>
+                </property>
+                <property name="text">
+                 <string>target</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+               <widget class="QTabWidget" name="tabAxisValues_C">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>10</y>
+                  <width>165</width>
+                  <height>211</height>
+                 </rect>
+                </property>
+                <property name="currentIndex">
+                 <number>0</number>
+                </property>
+                <widget class="QWidget" name="spi_C">
+                 <attribute name="title">
+                  <string>SPI</string>
+                 </attribute>
+                 <widget class="QLabel" name="labelSPI_C">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>150</y>
+                    <width>60</width>
+                    <height>25</height>
+                   </rect>
+                  </property>
                   <property name="frameShape">
-                   <enum>QFrame::Shape::StyledPanel</enum>
+                   <enum>QFrame::Shape::Panel</enum>
                   </property>
                   <property name="frameShadow">
-                   <enum>QFrame::Shadow::Raised</enum>
+                   <enum>QFrame::Shadow::Sunken</enum>
                   </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_8">
-                   <item>
-                    <widget class="QPushButton" name="btnNudgeUp_C">
-                     <property name="text">
-                      <string>^</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="btnNudgeDown_C">
-                     <property name="text">
-                      <string>v</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
+                  <property name="text">
+                   <string>absolute</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignCenter</set>
+                  </property>
                  </widget>
-                </item>
+                 <widget class="QSlider" name="sliderSPI_C">
+                  <property name="geometry">
+                   <rect>
+                    <x>30</x>
+                    <y>8</y>
+                    <width>20</width>
+                    <height>140</height>
+                   </rect>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                 </widget>
+                </widget>
+                <widget class="QWidget" name="encoder_C">
+                 <attribute name="title">
+                  <string>Encoder</string>
+                 </attribute>
+                 <widget class="QSlider" name="sliderABZ_C">
+                  <property name="geometry">
+                   <rect>
+                    <x>30</x>
+                    <y>10</y>
+                    <width>20</width>
+                    <height>140</height>
+                   </rect>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="labelABZ_C">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>150</y>
+                    <width>60</width>
+                    <height>25</height>
+                   </rect>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::Shape::Panel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Shadow::Sunken</enum>
+                  </property>
+                  <property name="text">
+                   <string>encoder</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignCenter</set>
+                  </property>
+                 </widget>
+                </widget>
+               </widget>
+               <widget class="QSlider" name="sliderTarget_C">
+                <property name="geometry">
+                 <rect>
+                  <x>110</x>
+                  <y>50</y>
+                  <width>20</width>
+                  <height>110</height>
+                 </rect>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Orientation::Vertical</enum>
+                </property>
+               </widget>
+               <widget class="QLabel" name="labelTargetReported_C">
+                <property name="geometry">
+                 <rect>
+                  <x>90</x>
+                  <y>192</y>
+                  <width>60</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Shape::Panel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Shadow::Sunken</enum>
+                </property>
+                <property name="text">
+                 <string>report</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+               <zorder>tabAxisValues_C</zorder>
+               <zorder>sliderTarget_C</zorder>
+               <zorder>labelTargetReported_C</zorder>
+               <zorder>labelTarget_C</zorder>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="frmControls_C">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>250</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Shape::NoFrame</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_7">
                 <item>
-                 <widget class="QLabel" name="lblNudgeCenter_C">
+                 <widget class="QFrame" name="frmCenter_C">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -1515,128 +1580,65 @@
                    <enum>QFrame::Shape::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
-                   <enum>QFrame::Shadow::Plain</enum>
+                   <enum>QFrame::Shadow::Raised</enum>
                   </property>
-                  <property name="text">
-                   <string>Nudge Center</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-                  </property>
-                  <property name="wordWrap">
-                   <bool>true</bool>
-                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_6">
+                   <item>
+                    <widget class="QFrame" name="crmCenterButtons_C">
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Raised</enum>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_8">
+                      <item>
+                       <widget class="QPushButton" name="btnNudgeUp_C">
+                        <property name="text">
+                         <string>^</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="btnNudgeDown_C">
+                        <property name="text">
+                         <string>v</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="lblNudgeCenter_C">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Plain</enum>
+                     </property>
+                     <property name="text">
+                      <string>Nudge Center</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                     </property>
+                     <property name="wordWrap">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="labelEnabled_C">
-               <property name="frameShape">
-                <enum>QFrame::Shape::NoFrame</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Plain</enum>
-               </property>
-               <property name="text">
-                <string>Axis: abled</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btnEnable_C">
-               <property name="text">
-                <string>Enable Axis</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QFrame" name="frmPID_C">
-               <property name="frameShape">
-                <enum>QFrame::Shape::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Raised</enum>
-               </property>
-               <layout class="QFormLayout" name="formLayout_3">
-                <item row="1" column="0">
-                 <widget class="QLabel" name="labelKp_C">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::Panel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Sunken</enum>
-                  </property>
-                  <property name="text">
-                   <string>0.000</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="0">
-                 <widget class="QLabel" name="labelKi_C">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::Panel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Sunken</enum>
-                  </property>
-                  <property name="text">
-                   <string>0.000</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="5" column="0">
-                 <widget class="QLabel" name="labelKd_C">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::Panel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Sunken</enum>
-                  </property>
-                  <property name="text">
-                   <string>0.000</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QLabel" name="lblPIDAP_C">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
+                <item>
+                 <widget class="QLabel" name="labelEnabled_C">
                   <property name="frameShape">
                    <enum>QFrame::Shape::NoFrame</enum>
                   </property>
@@ -1644,55 +1646,203 @@
                    <enum>QFrame::Shadow::Plain</enum>
                   </property>
                   <property name="text">
-                   <string>Tune: P</string>
+                   <string>Axis: abled</string>
                   </property>
                   <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                   <set>Qt::AlignmentFlag::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="1">
-                 <widget class="QLabel" name="lblPIDAI_C">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
+                <item>
+                 <widget class="QFrame" name="frmPID_C">
                   <property name="frameShape">
                    <enum>QFrame::Shape::NoFrame</enum>
                   </property>
                   <property name="frameShadow">
-                   <enum>QFrame::Shadow::Plain</enum>
+                   <enum>QFrame::Shadow::Raised</enum>
                   </property>
-                  <property name="text">
-                   <string>Tune: I</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="5" column="1">
-                 <widget class="QLabel" name="lblPIDAD_C">
-                  <property name="minimumSize">
-                   <size>
-                    <width>60</width>
-                    <height>16</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::NoFrame</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Plain</enum>
-                  </property>
-                  <property name="text">
-                   <string>Tune: D</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-                  </property>
+                  <layout class="QFormLayout" name="formLayout_3">
+                   <item row="1" column="1">
+                    <widget class="QLabel" name="lblPIDAP_C">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Plain</enum>
+                     </property>
+                     <property name="text">
+                      <string>Tune: P</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="1">
+                    <widget class="QLabel" name="lblPIDAI_C">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Plain</enum>
+                     </property>
+                     <property name="text">
+                      <string>Tune: I</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="5" column="1">
+                    <widget class="QLabel" name="lblPIDAD_C">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Plain</enum>
+                     </property>
+                     <property name="text">
+                      <string>Tune: D</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QFrame" name="frmKp_C">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::Panel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Raised</enum>
+                     </property>
+                     <widget class="QPushButton" name="btnKp_C">
+                      <property name="geometry">
+                       <rect>
+                        <x>0</x>
+                        <y>-1</y>
+                        <width>60</width>
+                        <height>20</height>
+                       </rect>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>60</width>
+                        <height>16</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string notr="true">0.000</string>
+                      </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </widget>
+                   </item>
+                   <item row="3" column="0">
+                    <widget class="QFrame" name="frmKi_C">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::Panel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Raised</enum>
+                     </property>
+                     <widget class="QPushButton" name="btnKi_C">
+                      <property name="geometry">
+                       <rect>
+                        <x>0</x>
+                        <y>-1</y>
+                        <width>60</width>
+                        <height>20</height>
+                       </rect>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>60</width>
+                        <height>16</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string notr="true">0.000</string>
+                      </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </widget>
+                   </item>
+                   <item row="5" column="0">
+                    <widget class="QFrame" name="frmKd_C">
+                     <property name="minimumSize">
+                      <size>
+                       <width>60</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::Shape::Panel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Shadow::Raised</enum>
+                     </property>
+                     <widget class="QPushButton" name="btnKd_C">
+                      <property name="geometry">
+                       <rect>
+                        <x>0</x>
+                        <y>-1</y>
+                        <width>60</width>
+                        <height>20</height>
+                       </rect>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>60</width>
+                        <height>16</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string notr="true">0.000</string>
+                      </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                </layout>

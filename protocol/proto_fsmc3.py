@@ -15,6 +15,7 @@ class FSMC3Protocol:
 		"COMMAND_ENABLE"		:	"N",
 		"COMMAND_MOVE"			:	"M",
 		"COMMAND_REPORT"		:	"R",
+		"COMMAND_STATIC"		:	"S",
 		"COMMAND_NUDGE_CENTER"	:	"C",
 		"COMMAND_SET_P"			:	"P",
 		"COMMAND_SET_I"			:	"I",
@@ -30,5 +31,6 @@ class FSMC3Protocol:
 		"OUTPUT_TARGET"			:	"T",
 		"OUTPUT_GET_P"			:	"P",
 		"OUTPUT_GET_I"			:	"I",
-		"OUTPUT_GET_D"			:	"D"
+		"OUTPUT_GET_D"			:	"D",
+		"OUTPUT_GET_EN"			:	"N"
 	}

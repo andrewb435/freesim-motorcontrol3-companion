@@ -1,5 +1,5 @@
 from PySide6 import QtWidgets as qtw
-from PySide6.QtCore import QThread, Signal
+from PySide6.QtCore import QThread, QTimer
 from ui.ui_main import Ui_qMain
 from structure.FSMCData import FSMCData
 from comm.comm_serial import SerialWorker
@@ -15,6 +15,10 @@ class AppUI(qtw.QMainWindow):
 		self.datamodel.triggerCommand.connect(self.sendCommandToSerial)
 		self.ui.setupUi(self)
 
+		self._timer = QTimer()
+		self._timer.timeout.connect(self._doPeriodic)
+		self._timer.start(1000)
+		
 		self._serialThreading()
 		self._comportList()
 		self._connectMainUi()
@@ -40,6 +44,9 @@ class AppUI(qtw.QMainWindow):
 
 	def _mapAxesUi_A(self):
 		# Axis A
+		self.datamodel.AxisA.loadAxisContainer(
+				self.ui.frmAxis_A
+			)
 		self.datamodel.AxisA.loadSPI(
 				self.parser.axisSPIOut,
 				self.ui.labelSPI_A,
@@ -52,9 +59,9 @@ class AppUI(qtw.QMainWindow):
 			)
 		self.datamodel.AxisA.loadPID(
 				self.parser.axisPIDOut,
-				self.ui.labelKp_A,
-				self.ui.labelKi_A,
-				self.ui.labelKd_A
+				self.ui.btnKp_A,
+				self.ui.btnKi_A,
+				self.ui.btnKd_A
 			)
 		self.datamodel.AxisA.loadTarget(
 				self.parser.axisTargetOut,
@@ -67,12 +74,16 @@ class AppUI(qtw.QMainWindow):
 				self.ui.btnNudgeDown_A
 			)
 		self.datamodel.AxisA.loadEnableUi(
+				self.parser.axisEnOut,
 				self.ui.btnEnable_A,
 				self.ui.labelEnabled_A
 			)
 		
 	def _mapAxesUi_B(self):
 		# Axis B
+		self.datamodel.AxisB.loadAxisContainer(
+				self.ui.frmAxis_B
+			)
 		self.datamodel.AxisB.loadSPI(
 				self.parser.axisSPIOut,
 				self.ui.labelSPI_B,
@@ -85,9 +96,9 @@ class AppUI(qtw.QMainWindow):
 			)
 		self.datamodel.AxisB.loadPID(
 				self.parser.axisPIDOut,
-				self.ui.labelKp_B,
-				self.ui.labelKi_B,
-				self.ui.labelKd_B
+				self.ui.btnKp_B,
+				self.ui.btnKi_B,
+				self.ui.btnKd_B
 			)
 		self.datamodel.AxisB.loadTarget(
 				self.parser.axisTargetOut,
@@ -100,12 +111,16 @@ class AppUI(qtw.QMainWindow):
 				self.ui.btnNudgeDown_B
 			)
 		self.datamodel.AxisB.loadEnableUi(
+				self.parser.axisEnOut,
 				self.ui.btnEnable_B,
 				self.ui.labelEnabled_B
 			)
 
 	def _mapAxesUi_C(self):
 		# Axis C
+		self.datamodel.AxisC.loadAxisContainer(
+				self.ui.frmAxis_C
+			)
 		self.datamodel.AxisC.loadSPI(
 				self.parser.axisSPIOut,
 				self.ui.labelSPI_C,
@@ -118,9 +133,9 @@ class AppUI(qtw.QMainWindow):
 			)
 		self.datamodel.AxisC.loadPID(
 				self.parser.axisPIDOut,
-				self.ui.labelKp_C,
-				self.ui.labelKi_C,
-				self.ui.labelKd_C
+				self.ui.btnKp_C,
+				self.ui.btnKi_C,
+				self.ui.btnKd_C
 			)
 		self.datamodel.AxisC.loadTarget(
 				self.parser.axisTargetOut,
@@ -133,9 +148,13 @@ class AppUI(qtw.QMainWindow):
 				self.ui.btnNudgeDown_C
 			)
 		self.datamodel.AxisC.loadEnableUi(
+				self.parser.axisEnOut,
 				self.ui.btnEnable_C,
 				self.ui.labelEnabled_C
 			)
+
+	def _doPeriodic(self):
+		self.datamodel.periodicUpdate()
 
 	def sendCommandToSerial(self, cmdType, cmdData):
 		command = self.parser.getCmd(cmdType, cmdData)
@@ -150,9 +169,7 @@ class AppUI(qtw.QMainWindow):
 			self.connectSerialUi()
 
 	def connectSerialUi(self):
-		self.ui.frmAxis_A.setEnabled(True)
-		self.ui.frmAxis_B.setEnabled(True)
-		self.ui.frmAxis_C.setEnabled(True)
+		self.ui.frmAxisControls.setEnabled(True)
 		self.ui.frmSystemEEPROM.setEnabled(True)
 		self.ui.btnSerialDisconnect.setEnabled(True)
 		self.ui.btnSerialConnect.setEnabled(False)
@@ -166,9 +183,7 @@ class AppUI(qtw.QMainWindow):
 		self.disconnectSerialUi()
 
 	def disconnectSerialUi(self):
-		self.ui.frmAxis_A.setEnabled(False)
-		self.ui.frmAxis_B.setEnabled(False)
-		self.ui.frmAxis_C.setEnabled(False)
+		self.ui.frmAxisControls.setEnabled(False)
 		self.ui.frmSystemEEPROM.setEnabled(False)
 		self.ui.btnSerialDisconnect.setEnabled(False)
 		self.ui.btnSerialConnect.setEnabled(True)

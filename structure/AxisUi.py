@@ -3,9 +3,6 @@ from PySide6.QtCore import QObject, Signal
 from fsmc_settings import FSMC3Settings
 
 class AxisUi(QObject):
-	uiTargetChange = Signal(int, int)
-	uiCenterNudge = Signal(int, int)
-	uiEnableClicked = Signal(int, int)
 
 	def __init__(self, index):
 		super().__init__()
@@ -83,40 +80,23 @@ class AxisUi(QObject):
 		self.labelTarget = label
 		self.sliderTarget = slider
 		self.labelTargetReported = labelReported
-		self.sliderTarget.valueChanged.connect(self._updateTarget)
 		max = int(2 ** FSMC3Settings.COMMAND_BIT_DEPTH) - 1
 		self.sliderTarget.setMaximum(max)
 		self.sliderTarget.setValue(int(max / 2))
 		self.sliderTarget.setEnabled(True)
-		self.sliderTarget.valueChanged.connect(self.sliderTargetFromUiChange)
+		self.labelTarget.setText(str(self.sliderTarget.value()))
 
-	def updateTargetReportedUi(self, value):
-		self.labelTargetReported.setText(str(value[self.index]))
-	
-	def sliderTargetFromUiChange(self, value):
-		self.uiTargetChange.emit(self.index, value)
+	def pushTarget(self, value : str):
+		self.labelTarget.setText(value)
+
+	def updateTarget(self, value : str):
+		self.labelTargetReported.setText(value)
 
 	def loadCenterUi(self,
 			btnNudgeUp_in : QPushButton,
 			btnNudgeDown_in : QPushButton):
 		self.btnNudgeUp = btnNudgeUp_in
 		self.btnNudgeDown = btnNudgeDown_in
-		self.btnNudgeUp.clicked.connect(self.btnCenterNudgeUp)
-		self.btnNudgeDown.clicked.connect(self.btnCenterNudgeDown)
-	
-	def btnCenterNudgeUp(self):
-		self.uiCenterNudge.emit(self.index, 1)
-
-	def btnCenterNudgeDown(self):
-		self.uiCenterNudge.emit(self.index, -1)
-
-	def loadEEPROMUi(self,
-			btnSave_in: QPushButton,
-			btnLoad_in: QPushButton,
-			btnWipe_in: QPushButton):
-		self.btnEEPROMSave = btnSave_in
-		self.btnEEPROMLoad = btnLoad_in
-		self.btnEEPROMWipe = btnWipe_in
 
 	def loadEnableUi(self,
 			btnEnable_in: QPushButton,
@@ -125,13 +105,9 @@ class AxisUi(QObject):
 		self.labelEnable = labelEnable_in
 	
 	def updateEnabled(self, value):
-		if value[self.index] >0:
+		if value >0:
 			self.btnEnable.setText("Disable Axis")
 			self.labelEnable.setText("Axis: Enabled")
-		elif value[self.index] <= 0:
+		elif value <= 0:
 			self.btnEnable.setText("Enable Axis")
 			self.labelEnable.setText("Axis: Disabled")
-
-	def _updateTarget(self, value):
-		self.labelTarget.setText(str(value))
-		self.uiTargetChange.emit(self.index, value)

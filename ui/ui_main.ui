@@ -303,8 +303,8 @@
                <widget class="QLabel" name="labelTarget_A">
                 <property name="geometry">
                  <rect>
-                  <x>90</x>
-                  <y>165</y>
+                  <x>100</x>
+                  <y>160</y>
                   <width>60</width>
                   <height>25</height>
                  </rect>
@@ -322,106 +322,13 @@
                  <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                </widget>
-               <widget class="QTabWidget" name="tabAxisValues_A">
-                <property name="geometry">
-                 <rect>
-                  <x>0</x>
-                  <y>10</y>
-                  <width>165</width>
-                  <height>211</height>
-                 </rect>
-                </property>
-                <property name="currentIndex">
-                 <number>0</number>
-                </property>
-                <widget class="QWidget" name="spi_A">
-                 <attribute name="title">
-                  <string>SPI</string>
-                 </attribute>
-                 <widget class="QLabel" name="labelSPI_A">
-                  <property name="geometry">
-                   <rect>
-                    <x>10</x>
-                    <y>150</y>
-                    <width>60</width>
-                    <height>25</height>
-                   </rect>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::Panel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Sunken</enum>
-                  </property>
-                  <property name="text">
-                   <string>absolute</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                  </property>
-                 </widget>
-                 <widget class="QSlider" name="sliderSPI_A">
-                  <property name="geometry">
-                   <rect>
-                    <x>30</x>
-                    <y>8</y>
-                    <width>20</width>
-                    <height>140</height>
-                   </rect>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Orientation::Vertical</enum>
-                  </property>
-                 </widget>
-                </widget>
-                <widget class="QWidget" name="encoder_A">
-                 <attribute name="title">
-                  <string>Encoder</string>
-                 </attribute>
-                 <widget class="QSlider" name="sliderABZ_A">
-                  <property name="geometry">
-                   <rect>
-                    <x>30</x>
-                    <y>10</y>
-                    <width>20</width>
-                    <height>140</height>
-                   </rect>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Orientation::Vertical</enum>
-                  </property>
-                 </widget>
-                 <widget class="QLabel" name="labelABZ_A">
-                  <property name="geometry">
-                   <rect>
-                    <x>10</x>
-                    <y>150</y>
-                    <width>60</width>
-                    <height>25</height>
-                   </rect>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::Panel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Sunken</enum>
-                  </property>
-                  <property name="text">
-                   <string>encoder</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                  </property>
-                 </widget>
-                </widget>
-               </widget>
                <widget class="QSlider" name="sliderTarget_A">
                 <property name="geometry">
                  <rect>
-                  <x>110</x>
-                  <y>50</y>
+                  <x>120</x>
+                  <y>10</y>
                   <width>20</width>
-                  <height>110</height>
+                  <height>150</height>
                  </rect>
                 </property>
                 <property name="orientation">
@@ -431,8 +338,8 @@
                <widget class="QLabel" name="labelTargetReported_A">
                 <property name="geometry">
                  <rect>
-                  <x>90</x>
-                  <y>192</y>
+                  <x>100</x>
+                  <y>190</y>
                   <width>60</width>
                   <height>25</height>
                  </rect>
@@ -450,10 +357,117 @@
                  <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                </widget>
-               <zorder>tabAxisValues_A</zorder>
+               <widget class="QLabel" name="labelABZ_A">
+                <property name="geometry">
+                 <rect>
+                  <x>50</x>
+                  <y>190</y>
+                  <width>40</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Shape::Panel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Shadow::Sunken</enum>
+                </property>
+                <property name="text">
+                 <string>encoder</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+               <widget class="QLabel" name="labelSPI_A">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>190</y>
+                  <width>40</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Shape::Panel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Shadow::Sunken</enum>
+                </property>
+                <property name="text">
+                 <string>absolute</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+               <widget class="QSlider" name="sliderABZ_A">
+                <property name="geometry">
+                 <rect>
+                  <x>60</x>
+                  <y>10</y>
+                  <width>20</width>
+                  <height>150</height>
+                 </rect>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Orientation::Vertical</enum>
+                </property>
+               </widget>
+               <widget class="QSlider" name="sliderSPI_A">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>10</y>
+                  <width>20</width>
+                  <height>150</height>
+                 </rect>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Orientation::Vertical</enum>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>160</y>
+                  <width>40</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>SPI</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_2">
+                <property name="geometry">
+                 <rect>
+                  <x>50</x>
+                  <y>160</y>
+                  <width>40</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>ABZ</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
                <zorder>sliderTarget_A</zorder>
                <zorder>labelTarget_A</zorder>
                <zorder>labelTargetReported_A</zorder>
+               <zorder>labelABZ_A</zorder>
+               <zorder>labelSPI_A</zorder>
+               <zorder>sliderABZ_A</zorder>
+               <zorder>sliderSPI_A</zorder>
+               <zorder>label</zorder>
+               <zorder>label_2</zorder>
               </widget>
              </item>
              <item>
@@ -850,8 +864,8 @@
                <widget class="QLabel" name="labelTarget_B">
                 <property name="geometry">
                  <rect>
-                  <x>90</x>
-                  <y>165</y>
+                  <x>100</x>
+                  <y>160</y>
                   <width>60</width>
                   <height>25</height>
                  </rect>
@@ -869,106 +883,13 @@
                  <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                </widget>
-               <widget class="QTabWidget" name="tabAxisValues_B">
-                <property name="geometry">
-                 <rect>
-                  <x>0</x>
-                  <y>10</y>
-                  <width>165</width>
-                  <height>211</height>
-                 </rect>
-                </property>
-                <property name="currentIndex">
-                 <number>0</number>
-                </property>
-                <widget class="QWidget" name="spi_B">
-                 <attribute name="title">
-                  <string>SPI</string>
-                 </attribute>
-                 <widget class="QLabel" name="labelSPI_B">
-                  <property name="geometry">
-                   <rect>
-                    <x>10</x>
-                    <y>150</y>
-                    <width>60</width>
-                    <height>25</height>
-                   </rect>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::Panel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Sunken</enum>
-                  </property>
-                  <property name="text">
-                   <string>absolute</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                  </property>
-                 </widget>
-                 <widget class="QSlider" name="sliderSPI_B">
-                  <property name="geometry">
-                   <rect>
-                    <x>30</x>
-                    <y>8</y>
-                    <width>20</width>
-                    <height>140</height>
-                   </rect>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Orientation::Vertical</enum>
-                  </property>
-                 </widget>
-                </widget>
-                <widget class="QWidget" name="encoder_B">
-                 <attribute name="title">
-                  <string>Encoder</string>
-                 </attribute>
-                 <widget class="QSlider" name="sliderABZ_B">
-                  <property name="geometry">
-                   <rect>
-                    <x>30</x>
-                    <y>10</y>
-                    <width>20</width>
-                    <height>140</height>
-                   </rect>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Orientation::Vertical</enum>
-                  </property>
-                 </widget>
-                 <widget class="QLabel" name="labelABZ_B">
-                  <property name="geometry">
-                   <rect>
-                    <x>10</x>
-                    <y>150</y>
-                    <width>60</width>
-                    <height>25</height>
-                   </rect>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::Panel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Sunken</enum>
-                  </property>
-                  <property name="text">
-                   <string>encoder</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                  </property>
-                 </widget>
-                </widget>
-               </widget>
                <widget class="QSlider" name="sliderTarget_B">
                 <property name="geometry">
                  <rect>
-                  <x>110</x>
-                  <y>50</y>
+                  <x>120</x>
+                  <y>10</y>
                   <width>20</width>
-                  <height>110</height>
+                  <height>150</height>
                  </rect>
                 </property>
                 <property name="orientation">
@@ -978,8 +899,8 @@
                <widget class="QLabel" name="labelTargetReported_B">
                 <property name="geometry">
                  <rect>
-                  <x>90</x>
-                  <y>192</y>
+                  <x>100</x>
+                  <y>190</y>
                   <width>60</width>
                   <height>25</height>
                  </rect>
@@ -997,10 +918,117 @@
                  <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                </widget>
-               <zorder>tabAxisValues_B</zorder>
+               <widget class="QSlider" name="sliderSPI_B">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>10</y>
+                  <width>20</width>
+                  <height>150</height>
+                 </rect>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Orientation::Vertical</enum>
+                </property>
+               </widget>
+               <widget class="QLabel" name="labelSPI_B">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>190</y>
+                  <width>40</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Shape::Panel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Shadow::Sunken</enum>
+                </property>
+                <property name="text">
+                 <string>absolute</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+               <widget class="QSlider" name="sliderABZ_B">
+                <property name="geometry">
+                 <rect>
+                  <x>60</x>
+                  <y>10</y>
+                  <width>20</width>
+                  <height>150</height>
+                 </rect>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Orientation::Vertical</enum>
+                </property>
+               </widget>
+               <widget class="QLabel" name="labelABZ_B">
+                <property name="geometry">
+                 <rect>
+                  <x>50</x>
+                  <y>190</y>
+                  <width>40</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Shape::Panel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Shadow::Sunken</enum>
+                </property>
+                <property name="text">
+                 <string>encoder</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_4">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>160</y>
+                  <width>40</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>SPI</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_3">
+                <property name="geometry">
+                 <rect>
+                  <x>50</x>
+                  <y>160</y>
+                  <width>40</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>ABZ</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
                <zorder>sliderTarget_B</zorder>
                <zorder>labelTarget_B</zorder>
                <zorder>labelTargetReported_B</zorder>
+               <zorder>sliderSPI_B</zorder>
+               <zorder>labelSPI_B</zorder>
+               <zorder>sliderABZ_B</zorder>
+               <zorder>labelABZ_B</zorder>
+               <zorder>label_4</zorder>
+               <zorder>label_3</zorder>
               </widget>
              </item>
              <item>
@@ -1394,8 +1422,8 @@
                <widget class="QLabel" name="labelTarget_C">
                 <property name="geometry">
                  <rect>
-                  <x>90</x>
-                  <y>165</y>
+                  <x>100</x>
+                  <y>160</y>
                   <width>60</width>
                   <height>25</height>
                  </rect>
@@ -1413,106 +1441,13 @@
                  <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                </widget>
-               <widget class="QTabWidget" name="tabAxisValues_C">
-                <property name="geometry">
-                 <rect>
-                  <x>0</x>
-                  <y>10</y>
-                  <width>165</width>
-                  <height>211</height>
-                 </rect>
-                </property>
-                <property name="currentIndex">
-                 <number>0</number>
-                </property>
-                <widget class="QWidget" name="spi_C">
-                 <attribute name="title">
-                  <string>SPI</string>
-                 </attribute>
-                 <widget class="QLabel" name="labelSPI_C">
-                  <property name="geometry">
-                   <rect>
-                    <x>10</x>
-                    <y>150</y>
-                    <width>60</width>
-                    <height>25</height>
-                   </rect>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::Panel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Sunken</enum>
-                  </property>
-                  <property name="text">
-                   <string>absolute</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                  </property>
-                 </widget>
-                 <widget class="QSlider" name="sliderSPI_C">
-                  <property name="geometry">
-                   <rect>
-                    <x>30</x>
-                    <y>8</y>
-                    <width>20</width>
-                    <height>140</height>
-                   </rect>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Orientation::Vertical</enum>
-                  </property>
-                 </widget>
-                </widget>
-                <widget class="QWidget" name="encoder_C">
-                 <attribute name="title">
-                  <string>Encoder</string>
-                 </attribute>
-                 <widget class="QSlider" name="sliderABZ_C">
-                  <property name="geometry">
-                   <rect>
-                    <x>30</x>
-                    <y>10</y>
-                    <width>20</width>
-                    <height>140</height>
-                   </rect>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Orientation::Vertical</enum>
-                  </property>
-                 </widget>
-                 <widget class="QLabel" name="labelABZ_C">
-                  <property name="geometry">
-                   <rect>
-                    <x>10</x>
-                    <y>150</y>
-                    <width>60</width>
-                    <height>25</height>
-                   </rect>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::Panel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Sunken</enum>
-                  </property>
-                  <property name="text">
-                   <string>encoder</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                  </property>
-                 </widget>
-                </widget>
-               </widget>
                <widget class="QSlider" name="sliderTarget_C">
                 <property name="geometry">
                  <rect>
-                  <x>110</x>
-                  <y>50</y>
+                  <x>120</x>
+                  <y>10</y>
                   <width>20</width>
-                  <height>110</height>
+                  <height>150</height>
                  </rect>
                 </property>
                 <property name="orientation">
@@ -1522,8 +1457,8 @@
                <widget class="QLabel" name="labelTargetReported_C">
                 <property name="geometry">
                  <rect>
-                  <x>90</x>
-                  <y>192</y>
+                  <x>100</x>
+                  <y>190</y>
                   <width>60</width>
                   <height>25</height>
                  </rect>
@@ -1541,10 +1476,117 @@
                  <set>Qt::AlignmentFlag::AlignCenter</set>
                 </property>
                </widget>
-               <zorder>tabAxisValues_C</zorder>
+               <widget class="QSlider" name="sliderSPI_C">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>10</y>
+                  <width>20</width>
+                  <height>150</height>
+                 </rect>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Orientation::Vertical</enum>
+                </property>
+               </widget>
+               <widget class="QSlider" name="sliderABZ_C">
+                <property name="geometry">
+                 <rect>
+                  <x>60</x>
+                  <y>10</y>
+                  <width>20</width>
+                  <height>150</height>
+                 </rect>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Orientation::Vertical</enum>
+                </property>
+               </widget>
+               <widget class="QLabel" name="labelSPI_C">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>190</y>
+                  <width>40</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Shape::Panel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Shadow::Sunken</enum>
+                </property>
+                <property name="text">
+                 <string>absolute</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+               <widget class="QLabel" name="labelABZ_C">
+                <property name="geometry">
+                 <rect>
+                  <x>50</x>
+                  <y>190</y>
+                  <width>40</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Shape::Panel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Shadow::Sunken</enum>
+                </property>
+                <property name="text">
+                 <string>encoder</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_6">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>160</y>
+                  <width>40</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>SPI</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_5">
+                <property name="geometry">
+                 <rect>
+                  <x>50</x>
+                  <y>160</y>
+                  <width>40</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>ABZ</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
                <zorder>sliderTarget_C</zorder>
                <zorder>labelTargetReported_C</zorder>
                <zorder>labelTarget_C</zorder>
+               <zorder>sliderSPI_C</zorder>
+               <zorder>sliderABZ_C</zorder>
+               <zorder>labelSPI_C</zorder>
+               <zorder>labelABZ_C</zorder>
+               <zorder>label_6</zorder>
+               <zorder>label_5</zorder>
               </widget>
              </item>
              <item>

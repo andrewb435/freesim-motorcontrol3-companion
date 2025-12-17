@@ -13,7 +13,7 @@ class FSMC3Parser(QObject):
 
 	def __init__(self):
 		super().__init__()
-		self.buffer: chr = [None]*3
+		self.buffer: chr = [None] * 3
 		self.command = None
 
 	def getCmd(self, cmdType, data = None):

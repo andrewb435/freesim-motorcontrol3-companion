@@ -11,7 +11,7 @@ class Axis(QObject):
 	def __init__(self, index):
 		super().__init__()
 		self.input				=	AxisUiPIDInput()
-		self.index				=	index
+		self.index	:	int		=	index
 		self._ui				=	AxisUi(index)
 		self._communicator		=	None
 		self.posSPI 		:	int	=	0
@@ -35,6 +35,7 @@ class Axis(QObject):
 			self.container.setEnabled(True)
 		else:
 			self.container.setEnabled(False)
+		self._ui.updateEnabled(self.enabled)
 
 	def loadSPI(self,
 			signal : SignalInstance,
@@ -167,51 +168,63 @@ class Axis(QObject):
 			slider : QSlider,
 			labelReported : QLabel,):
 		self._ui.loadTargetUi(label, slider, labelReported)
-		self._ui.uiTargetChange.connect(self.updateTargetFromUi)
-		signal.connect(self._ui.updateTargetReportedUi)
+		slider.valueChanged.connect(self._pushTarget)
+		signal.connect(self._updateTarget)
+		self.posCmdTarget = slider.value()
 	
 	def updateTargetFromUi(self, index, value):
 		if index == self.index:
 			self.posCmdTarget = value
 			self.uiCommandOutput.emit("COMMAND_MOVE", index, value)
 
-	def getAxisTarget(self):
+	def getTarget(self):
 		try:
 			return self.posCmdTarget
 		except Exception:
 			# return middle
 			return (int((2 ** FSMC3Settings.COMMAND_BIT_DEPTH) - 1) / 2)
 
+	def _pushTarget(self, value):
+		self.posCmdTarget = int(value)
+		self._ui.pushTarget(str(self.posCmdTarget))
+		self.uiCommandOutput.emit("COMMAND_MOVE", self.index, self.posCmdTarget)
+
+	def _updateTarget(self, value):
+		self.posDevTarget = value[self.index]
+		self._ui.updateTarget(str(self.posDevTarget))
+
 	def loadCenterUi(self,
 			btnNudgeUp_in : QPushButton,
 			btnNudgeDown_in : QPushButton):
 		self._ui.loadCenterUi(btnNudgeUp_in, btnNudgeDown_in)
-		self._ui.uiCenterNudge.connect(self.updateCenterNudge)
+		btnNudgeUp_in.clicked.connect(self._pushCenterNudgeUp)
+		btnNudgeDown_in.clicked.connect(self._pushCenterNudgeDown)
+	
+	def _pushCenterNudgeUp(self):
+		self.uiCommandOutput.emit("COMMAND_NUDGE_CENTER", self.index, 1)
 
-	def updateCenterNudge(self, index, direction):
-		self.uiCommandOutput.emit("COMMAND_NUDGE_CENTER", index, direction)
-
-	def loadEEPROMUi(self,
-			btnSave_in: QPushButton,
-			btnLoad_in: QPushButton,
-			btnWipe_in: QPushButton):
-		self._ui.loadEEPROMUi(btnSave_in, btnLoad_in, btnWipe_in)
+	def _pushCenterNudgeDown(self):
+		self.uiCommandOutput.emit("COMMAND_NUDGE_CENTER", self.index, -1)
 
 	def loadEnableUi(self,
 			signal : Signal,
 			btnEnable_in: QPushButton,
 			labelEnable_in: QLabel):
 		self._ui.loadEnableUi(btnEnable_in, labelEnable_in)
-		self._ui.uiEnableClicked.connect(self.clickedEnableUi)
+		btnEnable_in.clicked.connect(self.clickedEnableUi)
 		signal.connect(self.updateEnabled)
 
 	def updateEnabled(self, value):
-		try:
-			self.enabled = value[self.index]
-			self._ui.updateEnabled(value)
-			self.checkAxisEnabled()
-		except Exception as err:
-			print("updateEnabled: " + str(err))
+		self.enabled = value[self.index]
+		self.checkAxisEnabled()
 
-	def clickedEnableUi(self):
-		pass
+	def clickedEnableUi(self, index):
+		if self.enabled <= 0:
+			self.enabled = 1
+		else:
+			self.enabled = 0
+		self.checkAxisEnabled()
+		self.uiCommandOutput.emit("COMMAND_ENABLE", index, self.enabled)
+	
+	def getEnable(self):
+		return self.enabled

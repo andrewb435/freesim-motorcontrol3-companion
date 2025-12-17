@@ -41,6 +41,11 @@ class AppUI(qtw.QMainWindow):
 		self.ui.btnSerialConnect.clicked.connect(self.connectSerial)
 		self.ui.btnSerialDisconnect.clicked.connect(self.disconnectSerial)
 		self.ui.btnSerialRefresh.clicked.connect(self._comportList)
+		self.datamodel.loadEEPROMUi(
+				self.ui.btnEEPROMSave_A,
+				self.ui.btnEEPROMLoad_A,
+				self.ui.btnEEPROMWipe_A,
+			)
 
 	def _mapAxesUi_A(self):
 		# Axis A

@@ -16,6 +16,7 @@ class FSMC3Protocol:
 		"COMMAND_MOVE"			:	"M",
 		"COMMAND_REPORT"		:	"R",
 		"COMMAND_STATIC"		:	"S",
+		"COMMAND_SET_CENTER"	:	"c",
 		"COMMAND_NUDGE_CENTER"	:	"C",
 		"COMMAND_SET_P"			:	"P",
 		"COMMAND_SET_I"			:	"I",

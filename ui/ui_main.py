@@ -266,6 +266,11 @@ class Ui_qMain(object):
 
         self.verticalLayout_2.addWidget(self.btnNudgeUp_A)
 
+        self.btnCenterSet_A = QPushButton(self.crmCenterButtons_A)
+        self.btnCenterSet_A.setObjectName(u"btnCenterSet_A")
+
+        self.verticalLayout_2.addWidget(self.btnCenterSet_A)
+
         self.btnNudgeDown_A = QPushButton(self.crmCenterButtons_A)
         self.btnNudgeDown_A.setObjectName(u"btnNudgeDown_A")
 
@@ -492,6 +497,11 @@ class Ui_qMain(object):
         self.btnNudgeUp_B.setObjectName(u"btnNudgeUp_B")
 
         self.verticalLayout_6.addWidget(self.btnNudgeUp_B)
+
+        self.btnCenterSet_B = QPushButton(self.crmCenterButtons_B)
+        self.btnCenterSet_B.setObjectName(u"btnCenterSet_B")
+
+        self.verticalLayout_6.addWidget(self.btnCenterSet_B)
 
         self.btnNudgeDown_B = QPushButton(self.crmCenterButtons_B)
         self.btnNudgeDown_B.setObjectName(u"btnNudgeDown_B")
@@ -725,6 +735,11 @@ class Ui_qMain(object):
 
         self.verticalLayout_8.addWidget(self.btnNudgeUp_C)
 
+        self.btnCenterSet_C = QPushButton(self.crmCenterButtons_C)
+        self.btnCenterSet_C.setObjectName(u"btnCenterSet_C")
+
+        self.verticalLayout_8.addWidget(self.btnCenterSet_C)
+
         self.btnNudgeDown_C = QPushButton(self.crmCenterButtons_C)
         self.btnNudgeDown_C.setObjectName(u"btnNudgeDown_C")
 
@@ -881,6 +896,7 @@ class Ui_qMain(object):
         self.label.setText(QCoreApplication.translate("qMain", u"SPI", None))
         self.label_2.setText(QCoreApplication.translate("qMain", u"ABZ", None))
         self.btnNudgeUp_A.setText(QCoreApplication.translate("qMain", u"^", None))
+        self.btnCenterSet_A.setText(QCoreApplication.translate("qMain", u"-", None))
         self.btnNudgeDown_A.setText(QCoreApplication.translate("qMain", u"v", None))
         self.lblNudgeCenter_A.setText(QCoreApplication.translate("qMain", u"Nudge Center", None))
         self.labelEnabled_A.setText(QCoreApplication.translate("qMain", u"Axis: abled", None))
@@ -895,6 +911,7 @@ class Ui_qMain(object):
         self.label_4.setText(QCoreApplication.translate("qMain", u"SPI", None))
         self.label_3.setText(QCoreApplication.translate("qMain", u"ABZ", None))
         self.btnNudgeUp_B.setText(QCoreApplication.translate("qMain", u"^", None))
+        self.btnCenterSet_B.setText(QCoreApplication.translate("qMain", u"-", None))
         self.btnNudgeDown_B.setText(QCoreApplication.translate("qMain", u"v", None))
         self.lblNudgeCenter_B.setText(QCoreApplication.translate("qMain", u"Nudge Center", None))
         self.labelEnabled_B.setText(QCoreApplication.translate("qMain", u"Axis: abled", None))
@@ -909,6 +926,7 @@ class Ui_qMain(object):
         self.label_6.setText(QCoreApplication.translate("qMain", u"SPI", None))
         self.label_5.setText(QCoreApplication.translate("qMain", u"ABZ", None))
         self.btnNudgeUp_C.setText(QCoreApplication.translate("qMain", u"^", None))
+        self.btnCenterSet_C.setText(QCoreApplication.translate("qMain", u"-", None))
         self.btnNudgeDown_C.setText(QCoreApplication.translate("qMain", u"v", None))
         self.lblNudgeCenter_C.setText(QCoreApplication.translate("qMain", u"Nudge Center", None))
         self.labelEnabled_C.setText(QCoreApplication.translate("qMain", u"Axis: abled", None))

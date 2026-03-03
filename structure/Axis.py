@@ -195,16 +195,24 @@ class Axis(QObject):
 
 	def loadCenterUi(self,
 			btnNudgeUp_in : QPushButton,
+			btnCenterSet_in : QPushButton,
 			btnNudgeDown_in : QPushButton):
-		self._ui.loadCenterUi(btnNudgeUp_in, btnNudgeDown_in)
+		self._ui.loadCenterUi(btnNudgeUp_in, btnCenterSet_in, btnNudgeDown_in)
 		btnNudgeUp_in.clicked.connect(self._pushCenterNudgeUp)
+		btnCenterSet_in.clicked.connect(self._pushCenterSet)
 		btnNudgeDown_in.clicked.connect(self._pushCenterNudgeDown)
 	
 	def _pushCenterNudgeUp(self):
 		self.uiCommandOutput.emit("COMMAND_NUDGE_CENTER", self.index, 1)
+		self._ui.centerTarget()
+
+	def _pushCenterSet(self):
+		self.uiCommandOutput.emit("COMMAND_SET_CENTER", self.index, 1)
+		self._ui.centerTarget()
 
 	def _pushCenterNudgeDown(self):
 		self.uiCommandOutput.emit("COMMAND_NUDGE_CENTER", self.index, -1)
+		self._ui.centerTarget()
 
 	def loadEnableUi(self,
 			signal : Signal,

@@ -92,10 +92,16 @@ class AxisUi(QObject):
 	def updateTarget(self, value : str):
 		self.labelTargetReported.setText(value)
 
+	def centerTarget(self):
+		max = int(2 ** FSMC3Settings.COMMAND_BIT_DEPTH) - 1
+		self.sliderTarget.setValue(int(max / 2))
+
 	def loadCenterUi(self,
 			btnNudgeUp_in : QPushButton,
+			btnCenterSet_in : QPushButton,
 			btnNudgeDown_in : QPushButton):
 		self.btnNudgeUp = btnNudgeUp_in
+		self.btnCenterSet = btnCenterSet_in
 		self.btnNudgeDown = btnNudgeDown_in
 
 	def loadEnableUi(self,

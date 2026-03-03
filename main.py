@@ -76,6 +76,7 @@ class AppUI(qtw.QMainWindow):
 			)
 		self.datamodel.AxisA.loadCenterUi(
 				self.ui.btnNudgeUp_A,
+				self.ui.btnCenterSet_A,
 				self.ui.btnNudgeDown_A
 			)
 		self.datamodel.AxisA.loadEnableUi(
@@ -113,6 +114,7 @@ class AppUI(qtw.QMainWindow):
 			)
 		self.datamodel.AxisB.loadCenterUi(
 				self.ui.btnNudgeUp_B,
+				self.ui.btnCenterSet_B,
 				self.ui.btnNudgeDown_B
 			)
 		self.datamodel.AxisB.loadEnableUi(
@@ -150,6 +152,7 @@ class AppUI(qtw.QMainWindow):
 			)
 		self.datamodel.AxisC.loadCenterUi(
 				self.ui.btnNudgeUp_C,
+				self.ui.btnCenterSet_C,
 				self.ui.btnNudgeDown_C
 			)
 		self.datamodel.AxisC.loadEnableUi(

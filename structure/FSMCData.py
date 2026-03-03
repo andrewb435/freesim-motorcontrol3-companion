@@ -45,6 +45,7 @@ class FSMCData(QObject):
 		self.triggerCommand.emit("COMMAND_STATIC", dataOut)
 
 	def buildCommand(self, cmdType, index, data):
+		# TODO: Commands with data in the periodic updates instead of every report should get a followup periodic report
 		if cmdType == "COMMAND_MOVE":
 			self.packerMethod = Axis.getTarget
 			self.packBuffer(cmdType)

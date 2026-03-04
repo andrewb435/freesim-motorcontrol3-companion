@@ -39,9 +39,12 @@ class FSMC3Grapher(QWidget):
 				 uiSelectB: QRadioButton,
 				 uiSelectC: QRadioButton,
 				 ):
+		"""
+		Load UI signals and elements that the graph needs to know about
+		"""
+		sigReturnedEnable.connect(self.sigEnabledFlags)
 		sigReturnedPos.connect(self.parseReturnedData)
 		sigCommandedPos.connect(self.parseCommandedData)
-		sigReturnedEnable.connect(self.sigEnabledFlags)
 		self.uiSelects[0] = uiSelectA
 		self.uiSelects[1] = uiSelectB
 		self.uiSelects[2] = uiSelectC
@@ -91,7 +94,7 @@ class MplCanvas(FigureCanvasQTAgg):
 		]
 		self.posReturned = deque([0] * parent.dataTickHistoryLimit, maxlen=parent.dataTickHistoryLimit)
 		self.posCommanded = deque([0] * parent.dataTickHistoryLimit, maxlen=parent.dataTickHistoryLimit)
-		self.lastCommanded = pow(2,FSMC3Settings.COMMAND_BIT_DEPTH - 1)
+		self.lastCommanded = pow(2,FSMC3Settings.COMMAND_BIT_DEPTH - 1)	# default value of last commanded position is center of axis
 		self.graphInterval = 1000/60	# 1000ms / 60 frames per second
 		self.xData = range(parent.dataTickHistoryLimit)
 		self.configFigure()
@@ -113,6 +116,7 @@ class MplCanvas(FigureCanvasQTAgg):
 			[0, len(self.xData)],
 			[half, half],
 			linewidth='1',
+			label='_Midline',
 			color=(0.4, 0.4, 0.4, 0.5)
 		)
 		self.lineReturnedPos, = self.axis.plot(
@@ -135,7 +139,7 @@ class MplCanvas(FigureCanvasQTAgg):
 		self.axis.set_xticklabels([])
 		self.axis.set_facecolor((0.25, 0.25, 0.25))
 		self.axis.set_position([0,0,1,1])
-		self.axis.legend(loc='upper left')
+		self.axis.legend(loc='upper left', labelcolor='white', facecolor=(0.25, 0.25, 0.25))
 
 	def startAnim(self):
 		if self.ani is None:

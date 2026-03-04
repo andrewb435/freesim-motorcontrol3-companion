@@ -63,7 +63,6 @@ class SerialDriver:
 			return out
 		else:
 			return self.commandDefault
-			return None
 
 	def sendCommand(self):
 		if self.isReady():

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1224</width>
-    <height>819</height>
+    <width>1158</width>
+    <height>781</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,6 +15,21 @@
   </property>
   <widget class="QWidget" name="qBody">
    <layout class="QVBoxLayout" name="verticalLayout_12">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QFrame" name="frmSystem">
       <property name="sizePolicy">
@@ -576,7 +591,7 @@
                    <enum>QFrame::Shadow::Plain</enum>
                   </property>
                   <property name="text">
-                   <string>Axis: abled</string>
+                   <string>Axis: disabled</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1135,7 +1150,7 @@
                    <enum>QFrame::Shadow::Plain</enum>
                   </property>
                   <property name="text">
-                   <string>Axis: abled</string>
+                   <string>Axis: disabled</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1709,7 +1724,7 @@
                    <enum>QFrame::Shadow::Plain</enum>
                   </property>
                   <property name="text">
-                   <string>Axis: abled</string>
+                   <string>Axis: disabled</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1921,17 +1936,246 @@
      </widget>
     </item>
     <item>
-     <spacer name="verticalSpacer">
-      <property name="orientation">
-       <enum>Qt::Orientation::Vertical</enum>
+     <widget class="QFrame" name="frmGraph">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>255</verstretch>
+       </sizepolicy>
       </property>
-      <property name="sizeHint" stdset="0">
+      <property name="minimumSize">
        <size>
-        <width>20</width>
-        <height>40</height>
+        <width>0</width>
+        <height>0</height>
        </size>
       </property>
-     </spacer>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_14">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="graphRadios">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_13">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>10</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>10</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="OutputSignalSelector">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_12">
+             <property name="spacing">
+              <number>20</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="outSelect">
+               <property name="text">
+                <string>Output Signal: </string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="outNone">
+               <property name="text">
+                <string>Output: None</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="outSineSlow">
+               <property name="text">
+                <string>Output: Slow Sine</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="outSineFast">
+               <property name="text">
+                <string>Output: Fast Sine</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="AxisGraphSelector">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_11">
+             <property name="spacing">
+              <number>20</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="graphSelect">
+               <property name="text">
+                <string>Axis Graph:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="graphSelectA">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="text">
+                <string>Graph Axis A</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="graphSelectB">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="text">
+                <string>Graph Axis B</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="graphSelectC">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="text">
+                <string>Graph Axis C</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="outputGraph" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>250</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -1940,13 +2184,58 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1224</width>
+     <width>1158</width>
      <height>30</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>btnEEPROMWipe_A</tabstop>
+  <tabstop>btnEEPROMLoad_A</tabstop>
+  <tabstop>btnEEPROMSave_A</tabstop>
+  <tabstop>btnSerialConnect</tabstop>
+  <tabstop>btnSerialDisconnect</tabstop>
+  <tabstop>btnSerialRefresh</tabstop>
+  <tabstop>boxComportList</tabstop>
+  <tabstop>btnEnable_A</tabstop>
+  <tabstop>sliderSPI_A</tabstop>
+  <tabstop>sliderABZ_A</tabstop>
+  <tabstop>sliderTarget_A</tabstop>
+  <tabstop>btnNudgeUp_A</tabstop>
+  <tabstop>btnCenterSet_A</tabstop>
+  <tabstop>btnNudgeDown_A</tabstop>
+  <tabstop>btnKp_A</tabstop>
+  <tabstop>btnKi_A</tabstop>
+  <tabstop>btnKd_A</tabstop>
+  <tabstop>btnEnable_B</tabstop>
+  <tabstop>sliderSPI_B</tabstop>
+  <tabstop>sliderABZ_B</tabstop>
+  <tabstop>sliderTarget_B</tabstop>
+  <tabstop>btnNudgeUp_B</tabstop>
+  <tabstop>btnCenterSet_B</tabstop>
+  <tabstop>btnNudgeDown_B</tabstop>
+  <tabstop>btnKp_B</tabstop>
+  <tabstop>btnKi_B</tabstop>
+  <tabstop>btnKd_B</tabstop>
+  <tabstop>btnEnable_C</tabstop>
+  <tabstop>sliderSPI_C</tabstop>
+  <tabstop>sliderABZ_C</tabstop>
+  <tabstop>sliderTarget_C</tabstop>
+  <tabstop>btnNudgeUp_C</tabstop>
+  <tabstop>btnCenterSet_C</tabstop>
+  <tabstop>btnNudgeDown_C</tabstop>
+  <tabstop>btnKp_C</tabstop>
+  <tabstop>btnKi_C</tabstop>
+  <tabstop>btnKd_C</tabstop>
+  <tabstop>outNone</tabstop>
+  <tabstop>outSineSlow</tabstop>
+  <tabstop>outSineFast</tabstop>
+  <tabstop>graphSelectA</tabstop>
+  <tabstop>graphSelectB</tabstop>
+  <tabstop>graphSelectC</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

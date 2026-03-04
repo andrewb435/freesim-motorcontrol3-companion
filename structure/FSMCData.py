@@ -37,6 +37,7 @@ class FSMCData(QObject):
 
 	def _pushEEPROMWipeFlash(self):
 		self.buildCommand("COMMAND_EEPROM_WIPE", 0, 0)
+
 	def getAxes(self) -> list[Axis]:
 		return [self.AxisA, self.AxisB, self.AxisC]
 

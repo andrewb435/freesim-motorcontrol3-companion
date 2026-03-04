@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'ui_main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.10.1
+## Created by: Qt User Interface Compiler version 6.10.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -17,18 +17,20 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QFormLayout, QFrame,
     QHBoxLayout, QLabel, QMainWindow, QMenuBar,
-    QPushButton, QSizePolicy, QSlider, QSpacerItem,
-    QStatusBar, QVBoxLayout, QWidget)
+    QPushButton, QRadioButton, QSizePolicy, QSlider,
+    QSpacerItem, QStatusBar, QVBoxLayout, QWidget)
 
 class Ui_qMain(object):
     def setupUi(self, qMain):
         if not qMain.objectName():
             qMain.setObjectName(u"qMain")
-        qMain.resize(1224, 819)
+        qMain.resize(1158, 781)
         self.qBody = QWidget(qMain)
         self.qBody.setObjectName(u"qBody")
         self.verticalLayout_12 = QVBoxLayout(self.qBody)
+        self.verticalLayout_12.setSpacing(0)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
         self.frmSystem = QFrame(self.qBody)
         self.frmSystem.setObjectName(u"frmSystem")
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
@@ -860,18 +862,173 @@ class Ui_qMain(object):
 
         self.verticalLayout_12.addWidget(self.frmAxisControls)
 
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.frmGraph = QFrame(self.qBody)
+        self.frmGraph.setObjectName(u"frmGraph")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(255)
+        sizePolicy4.setHeightForWidth(self.frmGraph.sizePolicy().hasHeightForWidth())
+        self.frmGraph.setSizePolicy(sizePolicy4)
+        self.frmGraph.setMinimumSize(QSize(0, 0))
+        self.frmGraph.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frmGraph.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_14 = QVBoxLayout(self.frmGraph)
+        self.verticalLayout_14.setSpacing(0)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.graphRadios = QFrame(self.frmGraph)
+        self.graphRadios.setObjectName(u"graphRadios")
+        sizePolicy.setHeightForWidth(self.graphRadios.sizePolicy().hasHeightForWidth())
+        self.graphRadios.setSizePolicy(sizePolicy)
+        self.verticalLayout_13 = QVBoxLayout(self.graphRadios)
+        self.verticalLayout_13.setSpacing(0)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.verticalLayout_13.setContentsMargins(10, 0, 10, 0)
+        self.OutputSignalSelector = QFrame(self.graphRadios)
+        self.OutputSignalSelector.setObjectName(u"OutputSignalSelector")
+        self.OutputSignalSelector.setEnabled(False)
+        sizePolicy.setHeightForWidth(self.OutputSignalSelector.sizePolicy().hasHeightForWidth())
+        self.OutputSignalSelector.setSizePolicy(sizePolicy)
+        self.horizontalLayout_12 = QHBoxLayout(self.OutputSignalSelector)
+        self.horizontalLayout_12.setSpacing(20)
+        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.outSelect = QLabel(self.OutputSignalSelector)
+        self.outSelect.setObjectName(u"outSelect")
+        self.outSelect.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
-        self.verticalLayout_12.addItem(self.verticalSpacer)
+        self.horizontalLayout_12.addWidget(self.outSelect)
+
+        self.outNone = QRadioButton(self.OutputSignalSelector)
+        self.outNone.setObjectName(u"outNone")
+        self.outNone.setChecked(True)
+
+        self.horizontalLayout_12.addWidget(self.outNone)
+
+        self.outSineSlow = QRadioButton(self.OutputSignalSelector)
+        self.outSineSlow.setObjectName(u"outSineSlow")
+
+        self.horizontalLayout_12.addWidget(self.outSineSlow)
+
+        self.outSineFast = QRadioButton(self.OutputSignalSelector)
+        self.outSineFast.setObjectName(u"outSineFast")
+
+        self.horizontalLayout_12.addWidget(self.outSineFast)
+
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_12.addItem(self.horizontalSpacer)
+
+
+        self.verticalLayout_13.addWidget(self.OutputSignalSelector)
+
+        self.AxisGraphSelector = QFrame(self.graphRadios)
+        self.AxisGraphSelector.setObjectName(u"AxisGraphSelector")
+        sizePolicy.setHeightForWidth(self.AxisGraphSelector.sizePolicy().hasHeightForWidth())
+        self.AxisGraphSelector.setSizePolicy(sizePolicy)
+        self.horizontalLayout_11 = QHBoxLayout(self.AxisGraphSelector)
+        self.horizontalLayout_11.setSpacing(20)
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.graphSelect = QLabel(self.AxisGraphSelector)
+        self.graphSelect.setObjectName(u"graphSelect")
+        self.graphSelect.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+
+        self.horizontalLayout_11.addWidget(self.graphSelect)
+
+        self.graphSelectA = QRadioButton(self.AxisGraphSelector)
+        self.graphSelectA.setObjectName(u"graphSelectA")
+        self.graphSelectA.setEnabled(False)
+        self.graphSelectA.setChecked(True)
+
+        self.horizontalLayout_11.addWidget(self.graphSelectA)
+
+        self.graphSelectB = QRadioButton(self.AxisGraphSelector)
+        self.graphSelectB.setObjectName(u"graphSelectB")
+        self.graphSelectB.setEnabled(False)
+
+        self.horizontalLayout_11.addWidget(self.graphSelectB)
+
+        self.graphSelectC = QRadioButton(self.AxisGraphSelector)
+        self.graphSelectC.setObjectName(u"graphSelectC")
+        self.graphSelectC.setEnabled(False)
+
+        self.horizontalLayout_11.addWidget(self.graphSelectC)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_11.addItem(self.horizontalSpacer_2)
+
+
+        self.verticalLayout_13.addWidget(self.AxisGraphSelector)
+
+
+        self.verticalLayout_14.addWidget(self.graphRadios)
+
+        self.outputGraph = QWidget(self.frmGraph)
+        self.outputGraph.setObjectName(u"outputGraph")
+        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.MinimumExpanding)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.outputGraph.sizePolicy().hasHeightForWidth())
+        self.outputGraph.setSizePolicy(sizePolicy5)
+        self.outputGraph.setMinimumSize(QSize(0, 250))
+
+        self.verticalLayout_14.addWidget(self.outputGraph)
+
+
+        self.verticalLayout_12.addWidget(self.frmGraph)
 
         qMain.setCentralWidget(self.qBody)
         self.menubar = QMenuBar(qMain)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1224, 30))
+        self.menubar.setGeometry(QRect(0, 0, 1158, 30))
         qMain.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(qMain)
         self.statusbar.setObjectName(u"statusbar")
         qMain.setStatusBar(self.statusbar)
+        QWidget.setTabOrder(self.btnEEPROMWipe_A, self.btnEEPROMLoad_A)
+        QWidget.setTabOrder(self.btnEEPROMLoad_A, self.btnEEPROMSave_A)
+        QWidget.setTabOrder(self.btnEEPROMSave_A, self.btnSerialConnect)
+        QWidget.setTabOrder(self.btnSerialConnect, self.btnSerialDisconnect)
+        QWidget.setTabOrder(self.btnSerialDisconnect, self.btnSerialRefresh)
+        QWidget.setTabOrder(self.btnSerialRefresh, self.boxComportList)
+        QWidget.setTabOrder(self.boxComportList, self.btnEnable_A)
+        QWidget.setTabOrder(self.btnEnable_A, self.sliderSPI_A)
+        QWidget.setTabOrder(self.sliderSPI_A, self.sliderABZ_A)
+        QWidget.setTabOrder(self.sliderABZ_A, self.sliderTarget_A)
+        QWidget.setTabOrder(self.sliderTarget_A, self.btnNudgeUp_A)
+        QWidget.setTabOrder(self.btnNudgeUp_A, self.btnCenterSet_A)
+        QWidget.setTabOrder(self.btnCenterSet_A, self.btnNudgeDown_A)
+        QWidget.setTabOrder(self.btnNudgeDown_A, self.btnKp_A)
+        QWidget.setTabOrder(self.btnKp_A, self.btnKi_A)
+        QWidget.setTabOrder(self.btnKi_A, self.btnKd_A)
+        QWidget.setTabOrder(self.btnKd_A, self.btnEnable_B)
+        QWidget.setTabOrder(self.btnEnable_B, self.sliderSPI_B)
+        QWidget.setTabOrder(self.sliderSPI_B, self.sliderABZ_B)
+        QWidget.setTabOrder(self.sliderABZ_B, self.sliderTarget_B)
+        QWidget.setTabOrder(self.sliderTarget_B, self.btnNudgeUp_B)
+        QWidget.setTabOrder(self.btnNudgeUp_B, self.btnCenterSet_B)
+        QWidget.setTabOrder(self.btnCenterSet_B, self.btnNudgeDown_B)
+        QWidget.setTabOrder(self.btnNudgeDown_B, self.btnKp_B)
+        QWidget.setTabOrder(self.btnKp_B, self.btnKi_B)
+        QWidget.setTabOrder(self.btnKi_B, self.btnKd_B)
+        QWidget.setTabOrder(self.btnKd_B, self.btnEnable_C)
+        QWidget.setTabOrder(self.btnEnable_C, self.sliderSPI_C)
+        QWidget.setTabOrder(self.sliderSPI_C, self.sliderABZ_C)
+        QWidget.setTabOrder(self.sliderABZ_C, self.sliderTarget_C)
+        QWidget.setTabOrder(self.sliderTarget_C, self.btnNudgeUp_C)
+        QWidget.setTabOrder(self.btnNudgeUp_C, self.btnCenterSet_C)
+        QWidget.setTabOrder(self.btnCenterSet_C, self.btnNudgeDown_C)
+        QWidget.setTabOrder(self.btnNudgeDown_C, self.btnKp_C)
+        QWidget.setTabOrder(self.btnKp_C, self.btnKi_C)
+        QWidget.setTabOrder(self.btnKi_C, self.btnKd_C)
+        QWidget.setTabOrder(self.btnKd_C, self.outNone)
+        QWidget.setTabOrder(self.outNone, self.outSineSlow)
+        QWidget.setTabOrder(self.outSineSlow, self.outSineFast)
+        QWidget.setTabOrder(self.outSineFast, self.graphSelectA)
+        QWidget.setTabOrder(self.graphSelectA, self.graphSelectB)
+        QWidget.setTabOrder(self.graphSelectB, self.graphSelectC)
 
         self.retranslateUi(qMain)
 
@@ -899,7 +1056,7 @@ class Ui_qMain(object):
         self.btnCenterSet_A.setText(QCoreApplication.translate("qMain", u"-", None))
         self.btnNudgeDown_A.setText(QCoreApplication.translate("qMain", u"v", None))
         self.lblNudgeCenter_A.setText(QCoreApplication.translate("qMain", u"Nudge Center", None))
-        self.labelEnabled_A.setText(QCoreApplication.translate("qMain", u"Axis: abled", None))
+        self.labelEnabled_A.setText(QCoreApplication.translate("qMain", u"Axis: disabled", None))
         self.lblPIDAP_A.setText(QCoreApplication.translate("qMain", u"Tune: P", None))
         self.lblPIDAI_A.setText(QCoreApplication.translate("qMain", u"Tune: I", None))
         self.lblPIDAD_A.setText(QCoreApplication.translate("qMain", u"Tune: D", None))
@@ -914,7 +1071,7 @@ class Ui_qMain(object):
         self.btnCenterSet_B.setText(QCoreApplication.translate("qMain", u"-", None))
         self.btnNudgeDown_B.setText(QCoreApplication.translate("qMain", u"v", None))
         self.lblNudgeCenter_B.setText(QCoreApplication.translate("qMain", u"Nudge Center", None))
-        self.labelEnabled_B.setText(QCoreApplication.translate("qMain", u"Axis: abled", None))
+        self.labelEnabled_B.setText(QCoreApplication.translate("qMain", u"Axis: disabled", None))
         self.lblPIDAP_B.setText(QCoreApplication.translate("qMain", u"Tune: P", None))
         self.lblPIDAI_B.setText(QCoreApplication.translate("qMain", u"Tune: I", None))
         self.lblPIDAD_B.setText(QCoreApplication.translate("qMain", u"Tune: D", None))
@@ -929,9 +1086,17 @@ class Ui_qMain(object):
         self.btnCenterSet_C.setText(QCoreApplication.translate("qMain", u"-", None))
         self.btnNudgeDown_C.setText(QCoreApplication.translate("qMain", u"v", None))
         self.lblNudgeCenter_C.setText(QCoreApplication.translate("qMain", u"Nudge Center", None))
-        self.labelEnabled_C.setText(QCoreApplication.translate("qMain", u"Axis: abled", None))
+        self.labelEnabled_C.setText(QCoreApplication.translate("qMain", u"Axis: disabled", None))
         self.lblPIDAP_C.setText(QCoreApplication.translate("qMain", u"Tune: P", None))
         self.lblPIDAI_C.setText(QCoreApplication.translate("qMain", u"Tune: I", None))
         self.lblPIDAD_C.setText(QCoreApplication.translate("qMain", u"Tune: D", None))
+        self.outSelect.setText(QCoreApplication.translate("qMain", u"Output Signal: ", None))
+        self.outNone.setText(QCoreApplication.translate("qMain", u"Output: None", None))
+        self.outSineSlow.setText(QCoreApplication.translate("qMain", u"Output: Slow Sine", None))
+        self.outSineFast.setText(QCoreApplication.translate("qMain", u"Output: Fast Sine", None))
+        self.graphSelect.setText(QCoreApplication.translate("qMain", u"Axis Graph:", None))
+        self.graphSelectA.setText(QCoreApplication.translate("qMain", u"Graph Axis A", None))
+        self.graphSelectB.setText(QCoreApplication.translate("qMain", u"Graph Axis B", None))
+        self.graphSelectC.setText(QCoreApplication.translate("qMain", u"Graph Axis C", None))
     # retranslateUi
 

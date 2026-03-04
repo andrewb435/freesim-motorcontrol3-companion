@@ -1,7 +1,9 @@
 from PySide6 import QtWidgets as qtw
 from PySide6.QtCore import QThread, QTimer
+
 from ui.ui_main import Ui_qMain
 from structure.FSMCData import FSMCData
+from structure.FSMCGraph import FSMC3Grapher
 from comm.comm_serial import SerialWorker
 from parser.parser_fsmc3 import FSMC3Parser
 from protocol.proto_fsmc3 import FSMC3Protocol
@@ -10,10 +12,11 @@ class AppUI(qtw.QMainWindow):
 	def __init__(self):
 		super().__init__()
 		self.ui = Ui_qMain()
+		self.ui.setupUi(self)
 		self.parser = FSMC3Parser()
+		self.grapher = FSMC3Grapher(self.ui.outputGraph)
 		self.datamodel = FSMCData()
 		self.datamodel.triggerCommand.connect(self.sendCommandToSerial)
-		self.ui.setupUi(self)
 
 		self._timer = QTimer()
 		self._timer.timeout.connect(self._doPeriodic)
@@ -25,6 +28,7 @@ class AppUI(qtw.QMainWindow):
 		self._mapAxesUi_A()
 		self._mapAxesUi_B()
 		self._mapAxesUi_C()
+		self._mapGraphUi()
 
 	def _serialThreading(self):
 		self.serialThread = QThread()
@@ -160,6 +164,15 @@ class AppUI(qtw.QMainWindow):
 				self.ui.btnEnable_C,
 				self.ui.labelEnabled_C
 			)
+
+	def _mapGraphUi(self):
+		self.grapher.loadGraphUi(
+			self.parser.axisEnOut,
+			self.parser.axisABZOut,
+			self.datamodel.triggerCommand,
+			self.ui.graphSelectA,
+			self.ui.graphSelectB,
+			self.ui.graphSelectC)
 
 	def _doPeriodic(self):
 		self.datamodel.periodicUpdate()
